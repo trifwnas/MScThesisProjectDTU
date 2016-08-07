@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "PowerAXwebApp"
+  },
+  "hostingPlanName": {
+    "value": "PowerAXservicePlan"
+  },
+  "siteLocation": {
+    "value": "North Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "9933bf94-6b4e-490d-8159-391de5ac2ac0"
+  },
+  "resourceGroup": {
+    "value": "PowerAXDevTestUp1Env-DEV-D"
+  }
+}

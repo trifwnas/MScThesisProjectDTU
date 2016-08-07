@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Recording xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Client.ServerForm.TaskRecording">
+  <CanonicalId>65793743-aa96-492f-8d27-a56e67f24e10</CanonicalId>
+  <Description></Description>
+  <FormContexts xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>851_WMSOrder_9de457a9-c0f9-4b9e-b353-9994d0942230</d2p1:Key>
+      <d2p1:Value>
+        <Annotations>
+          <Annotation i:type="FormAnnotation">
+            <FilterCommandName>ApplyFilters</FilterCommandName>
+            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
+            <MenuItemLabel>Output orders</MenuItemLabel>
+            <MenuItemName>WMSOrder</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+          </Annotation>
+        </Annotations>
+        <FormID>851_WMSOrder_9de457a9-c0f9-4b9e-b353-9994d0942230</FormID>
+        <FormName>WMSOrder</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>WMSOrder</RecordingName>
+        <Sequence>2</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</d2p1:Key>
+      <d2p1:Value>
+        <Annotations>
+          <Annotation i:type="FormAnnotation">
+            <FilterCommandName>ApplyFilters</FilterCommandName>
+            <FilterControlName>SystemDefinedFilterPane</FilterControlName>
+            <MenuItemLabel>Counting</MenuItemLabel>
+            <MenuItemName>InventJournalTableCount</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+          </Annotation>
+        </Annotations>
+        <FormID>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormID>
+        <FormName>InventJournalCount</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>InventJournalCount</RecordingName>
+        <Sequence>8</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormID>
+        <FormName>InventJournalCreate</FormName>
+        <HasMetadata>true</HasMetadata>
+        <RecordingName>InventJournalCreate</RecordingName>
+        <Sequence>13</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+    <d2p1:KeyValueOfstringFormContextyaScvdpM>
+      <d2p1:Key>1207_InventJournalTable_JournalNameId_Lookup_9de457a9-c0f9-4b9e-b353-9994d0942230</d2p1:Key>
+      <d2p1:Value>
+        <Annotations i:nil="true" />
+        <FormID>1207_InventJournalTable_JournalNameId_Lookup_9de457a9-c0f9-4b9e-b353-9994d0942230</FormID>
+        <FormName></FormName>
+        <HasMetadata>false</HasMetadata>
+        <RecordingName>InventJournalTable_JournalNameId_Lookup</RecordingName>
+        <Sequence>18</Sequence>
+      </d2p1:Value>
+    </d2p1:KeyValueOfstringFormContextyaScvdpM>
+  </FormContexts>
+  <Name>PowerAX</Name>
+  <RootScope z:Id="i1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+    <CustomDescription i:nil="true" />
+    <Description i:nil="true" />
+    <Id>9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+    <Parent i:nil="true" />
+    <ParentSequence>0</ParentSequence>
+    <ScreenshotUri i:nil="true" />
+    <Sequence>0</Sequence>
+    <Children>
+      <Node z:Id="i2" i:type="Scope">
+        <CustomDescription i:nil="true" />
+        <Description></Description>
+        <Id>851_WMSOrder_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+        <Parent z:Ref="i1" />
+        <ParentSequence>0</ParentSequence>
+        <ScreenshotUri i:nil="true" />
+        <Sequence>1</Sequence>
+        <Children>
+          <Node z:Id="i3" i:type="Scope">
+            <CustomDescription i:nil="true" />
+            <Description></Description>
+            <Id>851_0RequestClose_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+            <Parent z:Ref="i2" />
+            <ParentSequence>1</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>3</Sequence>
+            <Children>
+              <Node z:Id="i4" i:type="CommandUserAction">
+                <CustomDescription i:nil="true" />
+                <Description>Close the page.</Description>
+                <Id>851_0RequestClose_9de457a9-c0f9-4b9e-b353-9994d0942230x4</Id>
+                <Parent z:Ref="i3" />
+                <ParentSequence>3</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>4</Sequence>
+                <Annotations />
+                <GlobalId>425060aa-e0f5-4cff-8c0d-625a7c37725a</GlobalId>
+                <SystemGenerated>false</SystemGenerated>
+                <ControlLabel i:nil="true" />
+                <ControlLabelId i:nil="true" />
+                <FormId>851_WMSOrder_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                <ListContext i:nil="true" />
+                <RowIndex i:nil="true" />
+                <Arguments>
+                  <CommandArgument>
+                    <IsReference>false</IsReference>
+                    <Value>false</Value>
+                  </CommandArgument>
+                </Arguments>
+                <CommandName>RequestClose</CommandName>
+                <ControlName i:nil="true" />
+                <ControlType i:nil="true" />
+                <LabelId>@SysTaskRecorder:CloseForm</LabelId>
+                <ReturnType>Void</ReturnType>
+                <ReturnValue i:nil="true" />
+              </Node>
+            </Children>
+            <IsForm>false</IsForm>
+            <IsStepGroup>false</IsStepGroup>
+            <Name>RequestClose</Name>
+            <ScopeType>Private</ScopeType>
+          </Node>
+        </Children>
+        <IsForm>true</IsForm>
+        <IsStepGroup>false</IsStepGroup>
+        <Name>WMSOrder</Name>
+        <ScopeType>Public</ScopeType>
+      </Node>
+      <Node z:Id="i5" i:type="Scope">
+        <CustomDescription i:nil="true" />
+        <Description></Description>
+        <Id>MenuIteminventjournaltablecount_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+        <Parent z:Ref="i1" />
+        <ParentSequence>0</ParentSequence>
+        <ScreenshotUri i:nil="true" />
+        <Sequence>5</Sequence>
+        <Children>
+          <Node z:Id="i6" i:type="MenuItemUserAction">
+            <CustomDescription i:nil="true" />
+            <Description>Go to Inventory management &gt; Journal entries &gt; Item counting &gt; Counting.</Description>
+            <Id>MenuIteminventjournaltablecount_9de457a9-c0f9-4b9e-b353-9994d0942230x6</Id>
+            <Parent z:Ref="i5" />
+            <ParentSequence>5</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>6</Sequence>
+            <Annotations />
+            <GlobalId>7f271e7b-1706-4488-947b-29d196f4c0e3</GlobalId>
+            <SystemGenerated>false</SystemGenerated>
+            <MenuItemName>inventjournaltablecount</MenuItemName>
+            <MenuItemType>Display</MenuItemType>
+            <NavigationPath xmlns:d7p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+              <d7p1:string>mainmenu</d7p1:string>
+              <d7p1:string>InventoryManagement</d7p1:string>
+              <d7p1:string>JournalEntries</d7p1:string>
+              <d7p1:string>ItemCounting</d7p1:string>
+            </NavigationPath>
+          </Node>
+          <Node z:Id="i7" i:type="Scope">
+            <CustomDescription i:nil="true" />
+            <Description></Description>
+            <Id>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+            <Parent z:Ref="i5" />
+            <ParentSequence>5</ParentSequence>
+            <ScreenshotUri i:nil="true" />
+            <Sequence>7</Sequence>
+            <Children>
+              <Node z:Id="i8" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1018_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>9</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>10</Sequence>
+                <Children>
+                  <Node z:Id="i9" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Click New.</Description>
+                    <Id>1018_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230x11</Id>
+                    <Parent z:Ref="i8" />
+                    <ParentSequence>10</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>11</Sequence>
+                    <Annotations />
+                    <GlobalId>a1e62e38-8e8d-4db8-8f99-da57c5d4b916</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>New</ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>Click</CommandName>
+                    <ControlName>SystemDefinedNewButton</ControlName>
+                    <ControlType>CommandButton</ControlType>
+                    <LabelId i:nil="true" />
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                  </Node>
+                  <Node z:Id="i10" i:type="Scope">
+                    <CustomDescription i:nil="true" />
+                    <Description></Description>
+                    <Id>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                    <Parent z:Ref="i8" />
+                    <ParentSequence>10</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>12</Sequence>
+                    <Children>
+                      <Node z:Id="i11" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description i:nil="true" />
+                        <Id>1167RequestPopup_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                        <Parent z:Ref="i10" />
+                        <ParentSequence>15</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>16</Sequence>
+                        <Children>
+                          <Node z:Id="i12" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>In the Name field, enter or select a value.</Description>
+                            <Id>1167RequestPopup_9de457a9-c0f9-4b9e-b353-9994d0942230x17</Id>
+                            <Parent z:Ref="i11" />
+                            <ParentSequence>16</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>17</Sequence>
+                            <Annotations>
+                              <Annotation i:type="CanonicalActionAnnotation">
+                                <CanonicalUserAction z:Id="i13" i:type="PropertyUserAction">
+                                  <CustomDescription i:nil="true" />
+                                  <Description i:nil="true" />
+                                  <Id i:nil="true" />
+                                  <Parent i:nil="true" />
+                                  <ParentSequence>0</ParentSequence>
+                                  <ScreenshotUri i:nil="true" />
+                                  <Sequence>0</Sequence>
+                                  <Annotations>
+                                    <Annotation i:type="LookupAnnotation">
+                                      <TableName>InventJournalName</TableName>
+                                    </Annotation>
+                                  </Annotations>
+                                  <GlobalId>f3e2b697-448f-46c6-9122-3fedad44426b</GlobalId>
+                                  <SystemGenerated>false</SystemGenerated>
+                                  <ControlLabel>Name</ControlLabel>
+                                  <ControlLabelId>@SYS7399</ControlLabelId>
+                                  <FormId i:nil="true" />
+                                  <ListContext i:nil="true" />
+                                  <RowIndex i:nil="true" />
+                                  <ControlName>InventJournalTable_JournalNameId</ControlName>
+                                  <ControlType>Input</ControlType>
+                                  <IsReference>false</IsReference>
+                                  <LabelId i:nil="true" />
+                                  <PropertyName>Value</PropertyName>
+                                  <UserActionType>Input</UserActionType>
+                                  <Value>ICnt</Value>
+                                  <ValueLabel i:nil="true" />
+                                </CanonicalUserAction>
+                              </Annotation>
+                            </Annotations>
+                            <GlobalId>2f4038a1-0ec1-4b1b-a292-4428a8baf336</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Name</ControlLabel>
+                            <ControlLabelId>@SYS7399</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>RequestPopup</CommandName>
+                            <ControlName>InventJournalTable_JournalNameId</ControlName>
+                            <ControlType>Input</ControlType>
+                            <LabelId>@SysTaskRecorder:SetValueFromLookUp</LabelId>
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                          </Node>
+                          <Node z:Id="i14" i:type="Scope">
+                            <CustomDescription i:nil="true" />
+                            <Description></Description>
+                            <Id>1207_InventJournalTable_JournalNameId_Lookup_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                            <Parent z:Ref="i11" />
+                            <ParentSequence>16</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>19</Sequence>
+                            <Children>
+                              <Node z:Id="i15" i:type="Scope">
+                                <CustomDescription i:nil="true" />
+                                <Description></Description>
+                                <Id>1215NavigationAction_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                                <Parent z:Ref="i14" />
+                                <ParentSequence>20</ParentSequence>
+                                <ScreenshotUri i:nil="true" />
+                                <Sequence>21</Sequence>
+                                <Children>
+                                  <Node z:Id="i16" i:type="CommandUserAction">
+                                    <CustomDescription i:nil="true" />
+                                    <Description>In the list, click the link in the selected row.</Description>
+                                    <Id>1215NavigationAction_9de457a9-c0f9-4b9e-b353-9994d0942230x22</Id>
+                                    <Parent z:Ref="i15" />
+                                    <ParentSequence>21</ParentSequence>
+                                    <ScreenshotUri i:nil="true" />
+                                    <Sequence>22</Sequence>
+                                    <Annotations>
+                                      <Annotation i:type="TaskGuideAnnotation">
+                                        <Description i:nil="true" />
+                                        <ExampleText i:nil="true" />
+                                        <GlobalId i:nil="true" />
+                                        <Hidden>true</Hidden>
+                                        <RecordingValueType>Preferred</RecordingValueType>
+                                        <Title i:nil="true" />
+                                      </Annotation>
+                                    </Annotations>
+                                    <GlobalId>4dcfc91c-7f0c-4f1c-a5ca-31bfac43e130</GlobalId>
+                                    <SystemGenerated>false</SystemGenerated>
+                                    <ControlLabel></ControlLabel>
+                                    <ControlLabelId></ControlLabelId>
+                                    <FormId>1207_InventJournalTable_JournalNameId_Lookup_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                                    <ListContext>Grid</ListContext>
+                                    <RowIndex i:nil="true" />
+                                    <Arguments />
+                                    <CommandName>NavigationAction</CommandName>
+                                    <ControlName>Grid</ControlName>
+                                    <ControlType>Grid</ControlType>
+                                    <LabelId></LabelId>
+                                    <ReturnType>Void</ReturnType>
+                                    <ReturnValue i:nil="true" />
+                                  </Node>
+                                </Children>
+                                <IsForm>false</IsForm>
+                                <IsStepGroup>false</IsStepGroup>
+                                <Name>Grid_NavigationAction</Name>
+                                <ScopeType>Private</ScopeType>
+                              </Node>
+                            </Children>
+                            <IsForm>true</IsForm>
+                            <IsStepGroup>false</IsStepGroup>
+                            <Name>InventJournalTable_JournalNameId_Lookup</Name>
+                            <ScopeType>Private</ScopeType>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>true</IsStepGroup>
+                        <Name>InventJournalTable_JournalNameId_RequestPopup</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i17" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>1181Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                        <Parent z:Ref="i10" />
+                        <ParentSequence>23</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>24</Sequence>
+                        <Children>
+                          <Node z:Id="i18" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Select No in the Warehouse field.</Description>
+                            <Id>1181Value_9de457a9-c0f9-4b9e-b353-9994d0942230x25</Id>
+                            <Parent z:Ref="i17" />
+                            <ParentSequence>24</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>25</Sequence>
+                            <Annotations />
+                            <GlobalId>304914ef-faad-4218-9e9f-ad19febacc88</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Warehouse</ControlLabel>
+                            <ControlLabelId>@SYS6437</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <ControlName>InventDimensions_InventLocationIdFlag</ControlName>
+                            <ControlType>CheckBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>False</Value>
+                            <ValueLabel>@SysTaskRecorder:No</ValueLabel>
+                          </Node>
+                          <Node z:Id="i19" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Select Yes in the Warehouse field.</Description>
+                            <Id>1181Value_9de457a9-c0f9-4b9e-b353-9994d0942230x26</Id>
+                            <Parent z:Ref="i17" />
+                            <ParentSequence>24</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>26</Sequence>
+                            <Annotations />
+                            <GlobalId>e37e23ca-e912-451f-b121-cf5f33fbb9b4</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Warehouse</ControlLabel>
+                            <ControlLabelId>@SYS6437</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <ControlName>InventDimensions_InventLocationIdFlag</ControlName>
+                            <ControlType>CheckBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>True</Value>
+                            <ValueLabel>@SysTaskRecorder:Yes</ValueLabel>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>InventDimensions_InventLocationIdFlag_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i20" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>1182Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                        <Parent z:Ref="i10" />
+                        <ParentSequence>27</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>28</Sequence>
+                        <Children>
+                          <Node z:Id="i21" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Select No in the Inventory status field.</Description>
+                            <Id>1182Value_9de457a9-c0f9-4b9e-b353-9994d0942230x29</Id>
+                            <Parent z:Ref="i20" />
+                            <ParentSequence>28</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>29</Sequence>
+                            <Annotations />
+                            <GlobalId>a073c003-a38f-47d2-aa71-cab2af6418ce</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Inventory status</ControlLabel>
+                            <ControlLabelId>@WAX357</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <ControlName>InventDimensions_InventStatusFlag</ControlName>
+                            <ControlType>CheckBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>False</Value>
+                            <ValueLabel>@SysTaskRecorder:No</ValueLabel>
+                          </Node>
+                          <Node z:Id="i22" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Select Yes in the Inventory status field.</Description>
+                            <Id>1182Value_9de457a9-c0f9-4b9e-b353-9994d0942230x30</Id>
+                            <Parent z:Ref="i20" />
+                            <ParentSequence>28</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>30</Sequence>
+                            <Annotations />
+                            <GlobalId>39358120-9a68-4b4d-a6c1-ce5bc459cc69</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Inventory status</ControlLabel>
+                            <ControlLabelId>@WAX357</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <ControlName>InventDimensions_InventStatusFlag</ControlName>
+                            <ControlType>CheckBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>True</Value>
+                            <ValueLabel>@SysTaskRecorder:Yes</ValueLabel>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>InventDimensions_InventStatusFlag_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i23" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>1183Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                        <Parent z:Ref="i10" />
+                        <ParentSequence>31</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>32</Sequence>
+                        <Children>
+                          <Node z:Id="i24" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Select No in the Location field.</Description>
+                            <Id>1183Value_9de457a9-c0f9-4b9e-b353-9994d0942230x33</Id>
+                            <Parent z:Ref="i23" />
+                            <ParentSequence>32</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>33</Sequence>
+                            <Annotations />
+                            <GlobalId>550ae537-82e7-42e6-96d5-bd21b57f2f10</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Location</ControlLabel>
+                            <ControlLabelId>@SYS101242</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <ControlName>InventDimensions_WMSLocationIdFlag</ControlName>
+                            <ControlType>CheckBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>False</Value>
+                            <ValueLabel>@SysTaskRecorder:No</ValueLabel>
+                          </Node>
+                          <Node z:Id="i25" i:type="PropertyUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Select Yes in the Location field.</Description>
+                            <Id>1183Value_9de457a9-c0f9-4b9e-b353-9994d0942230x34</Id>
+                            <Parent z:Ref="i23" />
+                            <ParentSequence>32</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>34</Sequence>
+                            <Annotations />
+                            <GlobalId>3bf109d5-8ab9-4290-a0f0-0abffb988519</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>Location</ControlLabel>
+                            <ControlLabelId>@SYS101242</ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <ControlName>InventDimensions_WMSLocationIdFlag</ControlName>
+                            <ControlType>CheckBox</ControlType>
+                            <IsReference>false</IsReference>
+                            <LabelId>@SysTaskRecorder:Slider_SetValue</LabelId>
+                            <PropertyName>Value</PropertyName>
+                            <UserActionType>Input</UserActionType>
+                            <Value>True</Value>
+                            <ValueLabel>@SysTaskRecorder:Yes</ValueLabel>
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>InventDimensions_WMSLocationIdFlag_Value</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                      <Node z:Id="i26" i:type="Scope">
+                        <CustomDescription i:nil="true" />
+                        <Description></Description>
+                        <Id>1205_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                        <Parent z:Ref="i10" />
+                        <ParentSequence>35</ParentSequence>
+                        <ScreenshotUri i:nil="true" />
+                        <Sequence>36</Sequence>
+                        <Children>
+                          <Node z:Id="i27" i:type="CommandUserAction">
+                            <CustomDescription i:nil="true" />
+                            <Description>Click OK.</Description>
+                            <Id>1205_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230x37</Id>
+                            <Parent z:Ref="i26" />
+                            <ParentSequence>36</ParentSequence>
+                            <ScreenshotUri i:nil="true" />
+                            <Sequence>37</Sequence>
+                            <Annotations />
+                            <GlobalId>a67213c2-7814-4e96-9dd2-c92977c195a9</GlobalId>
+                            <SystemGenerated>false</SystemGenerated>
+                            <ControlLabel>OK</ControlLabel>
+                            <ControlLabelId></ControlLabelId>
+                            <FormId>1138_InventJournalCreate_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                            <ListContext i:nil="true" />
+                            <RowIndex i:nil="true" />
+                            <Arguments />
+                            <CommandName>Click</CommandName>
+                            <ControlName>Ok</ControlName>
+                            <ControlType>CommandButton</ControlType>
+                            <LabelId i:nil="true" />
+                            <ReturnType>Void</ReturnType>
+                            <ReturnValue i:nil="true" />
+                          </Node>
+                        </Children>
+                        <IsForm>false</IsForm>
+                        <IsStepGroup>false</IsStepGroup>
+                        <Name>Ok_Click</Name>
+                        <ScopeType>Private</ScopeType>
+                      </Node>
+                    </Children>
+                    <IsForm>true</IsForm>
+                    <IsStepGroup>false</IsStepGroup>
+                    <Name>InventJournalCreate</Name>
+                    <ScopeType>Public</ScopeType>
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>SystemDefinedNewButton_Click</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i28" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1060_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>38</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>39</Sequence>
+                <Children>
+                  <Node z:Id="i29" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Click New.</Description>
+                    <Id>1060_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230x40</Id>
+                    <Parent z:Ref="i28" />
+                    <ParentSequence>39</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>40</Sequence>
+                    <Annotations />
+                    <GlobalId>5354919b-45da-4a29-be4d-c15856c99104</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>New</ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>Click</CommandName>
+                    <ControlName>NewLine</ControlName>
+                    <ControlType>CommandButton</ControlType>
+                    <LabelId i:nil="true" />
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>NewLine_Click</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i30" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1066MarkActiveRow_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>41</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>42</Sequence>
+                <Children>
+                  <Node z:Id="i31" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the list, mark the selected row.</Description>
+                    <Id>1066MarkActiveRow_9de457a9-c0f9-4b9e-b353-9994d0942230x43</Id>
+                    <Parent z:Ref="i30" />
+                    <ParentSequence>42</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>43</Sequence>
+                    <Annotations />
+                    <GlobalId>cdcda6b4-4b02-43cc-b5d7-3a3f002ee824</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel></ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>MarkActiveRow</CommandName>
+                    <ControlName>Grid</ControlName>
+                    <ControlType>Grid</ControlType>
+                    <LabelId></LabelId>
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>Grid_MarkActiveRow</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i32" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1071Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>44</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>45</Sequence>
+                <Children>
+                  <Node z:Id="i33" i:type="PropertyUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the Item number field, type a value.</Description>
+                    <Id>1071Value_9de457a9-c0f9-4b9e-b353-9994d0942230x46</Id>
+                    <Parent z:Ref="i32" />
+                    <ParentSequence>45</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>46</Sequence>
+                    <Annotations />
+                    <GlobalId>44b882fb-0d8c-4402-8acb-29798a67a69d</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Item number</ControlLabel>
+                    <ControlLabelId>@SYS12836</ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <ControlName>InventJournalTrans_ItemId</ControlName>
+                    <ControlType>Input</ControlType>
+                    <IsReference>false</IsReference>
+                    <LabelId i:nil="true" />
+                    <PropertyName>Value</PropertyName>
+                    <UserActionType>Input</UserActionType>
+                    <Value>a0001</Value>
+                    <ValueLabel i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>InventJournalTrans_ItemId_Value</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i34" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1077Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>47</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>48</Sequence>
+                <Children>
+                  <Node z:Id="i35" i:type="PropertyUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the Warehouse field, type a value.</Description>
+                    <Id>1077Value_9de457a9-c0f9-4b9e-b353-9994d0942230x49</Id>
+                    <Parent z:Ref="i34" />
+                    <ParentSequence>48</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>49</Sequence>
+                    <Annotations />
+                    <GlobalId>1bde6658-0f2b-47bd-b71f-ec5989dccfa2</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Warehouse</ControlLabel>
+                    <ControlLabelId>@SYS6437</ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <ControlName>InventoryDimensionsGrid_InventLocationId</ControlName>
+                    <ControlType>Input</ControlType>
+                    <IsReference>false</IsReference>
+                    <LabelId i:nil="true" />
+                    <PropertyName>Value</PropertyName>
+                    <UserActionType>Input</UserActionType>
+                    <Value>24</Value>
+                    <ValueLabel i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>InventoryDimensionsGrid_InventLocationId_Value</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i36" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1079Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>50</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>51</Sequence>
+                <Children>
+                  <Node z:Id="i37" i:type="PropertyUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the Location field, type a value.</Description>
+                    <Id>1079Value_9de457a9-c0f9-4b9e-b353-9994d0942230x52</Id>
+                    <Parent z:Ref="i36" />
+                    <ParentSequence>51</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>52</Sequence>
+                    <Annotations />
+                    <GlobalId>b44aafd8-dd10-4948-9863-6bc000fb0c6d</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Location</ControlLabel>
+                    <ControlLabelId>@SYS101242</ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <ControlName>InventoryDimensionsGrid_wMSLocationId</ControlName>
+                    <ControlType>Input</ControlType>
+                    <IsReference>false</IsReference>
+                    <LabelId i:nil="true" />
+                    <PropertyName>Value</PropertyName>
+                    <UserActionType>Input</UserActionType>
+                    <Value>bulk-009</Value>
+                    <ValueLabel i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>InventoryDimensionsGrid_wMSLocationId_Value</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i38" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1089Value_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>54</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>55</Sequence>
+                <Children>
+                  <Node z:Id="i39" i:type="PropertyUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>In the Quantity field, enter a number.</Description>
+                    <Id>1089Value_9de457a9-c0f9-4b9e-b353-9994d0942230x56</Id>
+                    <Parent z:Ref="i38" />
+                    <ParentSequence>55</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>56</Sequence>
+                    <Annotations />
+                    <GlobalId>68bb2e84-a512-44d7-82e9-080dfcb10ce6</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Quantity</ControlLabel>
+                    <ControlLabelId>@SYS14578</ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext>Grid</ListContext>
+                    <RowIndex i:nil="true" />
+                    <ControlName>InventJournalTrans_Qty</ControlName>
+                    <ControlType>Real</ControlType>
+                    <IsReference>false</IsReference>
+                    <LabelId i:nil="true" />
+                    <PropertyName>Value</PropertyName>
+                    <UserActionType>Input</UserActionType>
+                    <Value>15</Value>
+                    <ValueLabel i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>InventJournalTrans_Qty_Value</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+              <Node z:Id="i40" i:type="Scope">
+                <CustomDescription i:nil="true" />
+                <Description></Description>
+                <Id>1016_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230</Id>
+                <Parent z:Ref="i7" />
+                <ParentSequence>57</ParentSequence>
+                <ScreenshotUri i:nil="true" />
+                <Sequence>58</Sequence>
+                <Children>
+                  <Node z:Id="i41" i:type="CommandUserAction">
+                    <CustomDescription i:nil="true" />
+                    <Description>Click Save.</Description>
+                    <Id>1016_0Click_9de457a9-c0f9-4b9e-b353-9994d0942230x59</Id>
+                    <Parent z:Ref="i40" />
+                    <ParentSequence>58</ParentSequence>
+                    <ScreenshotUri i:nil="true" />
+                    <Sequence>59</Sequence>
+                    <Annotations />
+                    <GlobalId>fde5994e-3c5a-4b7c-afd4-678f645f3fb6</GlobalId>
+                    <SystemGenerated>false</SystemGenerated>
+                    <ControlLabel>Save</ControlLabel>
+                    <ControlLabelId></ControlLabelId>
+                    <FormId>985_InventJournalCount_9de457a9-c0f9-4b9e-b353-9994d0942230</FormId>
+                    <ListContext i:nil="true" />
+                    <RowIndex i:nil="true" />
+                    <Arguments />
+                    <CommandName>Click</CommandName>
+                    <ControlName>SystemDefinedSaveButton</ControlName>
+                    <ControlType>CommandButton</ControlType>
+                    <LabelId i:nil="true" />
+                    <ReturnType>Void</ReturnType>
+                    <ReturnValue i:nil="true" />
+                  </Node>
+                </Children>
+                <IsForm>false</IsForm>
+                <IsStepGroup>false</IsStepGroup>
+                <Name>SystemDefinedSaveButton_Click</Name>
+                <ScopeType>Private</ScopeType>
+              </Node>
+            </Children>
+            <IsForm>true</IsForm>
+            <IsStepGroup>false</IsStepGroup>
+            <Name>InventJournalCount</Name>
+            <ScopeType>Public</ScopeType>
+          </Node>
+        </Children>
+        <IsForm>false</IsForm>
+        <IsStepGroup>false</IsStepGroup>
+        <Name>MenuItem_inventjournaltablecount</Name>
+        <ScopeType>Private</ScopeType>
+      </Node>
+    </Children>
+    <IsForm>false</IsForm>
+    <IsStepGroup>false</IsStepGroup>
+    <Name>PowerAX</Name>
+    <ScopeType>Public</ScopeType>
+  </RootScope>
+  <UserActions xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <d2p1:anyType z:Ref="i4" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i6" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i9" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i12" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i16" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i18" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i19" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i21" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i22" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i24" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i25" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i27" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i29" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i31" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i33" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i35" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i37" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i39" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+    <d2p1:anyType z:Ref="i41" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+  </UserActions>
+</Recording>

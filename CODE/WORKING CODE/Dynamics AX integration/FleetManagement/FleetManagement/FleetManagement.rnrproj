@@ -1,0 +1,2338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <Model>FleetManagement</Model>
+    <DBSyncInBuild>False</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{4d86ca6a-e82c-46f7-b286-1dc65c606c04}</ProjectGuid>
+    <Name>FleetManagement</Name>
+    <RootNamespace>FleetManagement</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Action Menu Items\" />
+    <Folder Include="Aggregate Dimensions\" />
+    <Folder Include="Aggregate Measurements\" />
+    <Folder Include="AxAggregateDataEntity\" />
+    <Folder Include="AxReference\" />
+    <Folder Include="Base Enum Extensions\" />
+    <Folder Include="Base Enums\" />
+    <Folder Include="Calculated Measure Templates\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Data Entities\" />
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Extended Data Types\" />
+    <Folder Include="Forms\" />
+    <Folder Include="KPIs\" />
+    <Folder Include="Label Files\" />
+    <Folder Include="Menu Extensions\" />
+    <Folder Include="Menus\" />
+    <Folder Include="Output Menu Items\" />
+    <Folder Include="Reports\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Security Duties\" />
+    <Folder Include="Security Policies\" />
+    <Folder Include="Security Privileges\" />
+    <Folder Include="Security Roles\" />
+    <Folder Include="Service Groups\" />
+    <Folder Include="Services\" />
+    <Folder Include="Simple Queries\" />
+    <Folder Include="Tables\" />
+    <Folder Include="Tiles\" />
+    <Folder Include="Views\" />
+    <Folder Include="Workflow Approvals\" />
+    <Folder Include="Workflow Automated Tasks\" />
+    <Folder Include="Workflow Categories\" />
+    <Folder Include="Workflow Tasks\" />
+    <Folder Include="Workflow Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2015-05-25-FleetCustomersWithLocations.xlsx">
+      <SubType>Content</SubType>
+      <Name>2015-05-25-FleetCustomersWithLocations.xlsx</Name>
+      <DependentUpon>AxResource\FMTemplateCustomersWithLocations</DependentUpon>
+    </Content>
+    <Content Include="2015-05-25-FleetRentalsByStatus.xlsx">
+      <SubType>Content</SubType>
+      <Name>2015-05-25-FleetRentalsByStatus.xlsx</Name>
+      <DependentUpon>AxResource\FMTemplateRentalsByStatus</DependentUpon>
+    </Content>
+    <Content Include="Adatum_Four_red.png">
+      <SubType>Content</SubType>
+      <Name>Adatum_Four_red.png</Name>
+      <DependentUpon>AxResource\Adatum_Four_red</DependentUpon>
+    </Content>
+    <Content Include="Adatum_Ninetynine_orange.png">
+      <SubType>Content</SubType>
+      <Name>Adatum_Ninetynine_orange.png</Name>
+      <DependentUpon>AxResource\Adatum_Ninetynine_orange</DependentUpon>
+    </Content>
+    <Content Include="Adatum_One_white.png">
+      <SubType>Content</SubType>
+      <Name>Adatum_One_white.png</Name>
+      <DependentUpon>AxResource\Adatum_One_white</DependentUpon>
+    </Content>
+    <Content Include="AdventureWorks_Fuji_red.png">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Fuji_red.png</Name>
+      <DependentUpon>AxResource\AdventureWorks_Fuji_red</DependentUpon>
+    </Content>
+    <Content Include="AdventureWorks_Fuji_white.png">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Fuji_white.png</Name>
+      <DependentUpon>AxResource\AdventureWorks_Fuji_white</DependentUpon>
+    </Content>
+    <Content Include="AdventureWorks_Makalu_red.png">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Makalu_red.png</Name>
+      <DependentUpon>AxResource\AdventureWorks_Makalu_red</DependentUpon>
+    </Content>
+    <Content Include="AdventureWorks_Makalu_white.png">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Makalu_white.png</Name>
+      <DependentUpon>AxResource\AdventureWorks_Makalu_white</DependentUpon>
+    </Content>
+    <Content Include="AdventureWorks_Shasta_gray.png">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Shasta_gray.png</Name>
+      <DependentUpon>AxResource\AdventureWorks_Shasta_gray</DependentUpon>
+    </Content>
+    <Content Include="AhmedMansoor.png">
+      <SubType>Content</SubType>
+      <Name>AhmedMansoor.png</Name>
+      <DependentUpon>AxResource\AhmedMansoor_png</DependentUpon>
+    </Content>
+    <Content Include="AxAggregateCalculatedMeasureTemplate\FMSimpleDivide">
+      <SubType>Content</SubType>
+      <Name>FMSimpleDivide</Name>
+      <Link>Calculated Measure Templates\FMSimpleDivide</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMBIRevenueByVehicleModel">
+      <SubType>Content</SubType>
+      <Name>FMBIRevenueByVehicleModel</Name>
+      <Link>AxAggregateDataEntity\FMBIRevenueByVehicleModel</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMCustomerActivity">
+      <SubType>Content</SubType>
+      <Name>FMCustomerActivity</Name>
+      <Link>AxAggregateDataEntity\FMCustomerActivity</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMCustomerRentalsByColor">
+      <SubType>Content</SubType>
+      <Name>FMCustomerRentalsByColor</Name>
+      <Link>AxAggregateDataEntity\FMCustomerRentalsByColor</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMCustomerRentalsByModel">
+      <SubType>Content</SubType>
+      <Name>FMCustomerRentalsByModel</Name>
+      <Link>AxAggregateDataEntity\FMCustomerRentalsByModel</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMRentalActivity">
+      <SubType>Content</SubType>
+      <Name>FMRentalActivity</Name>
+      <Link>AxAggregateDataEntity\FMRentalActivity</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMRevenueByVehicleModel">
+      <SubType>Content</SubType>
+      <Name>FMRevenueByVehicleModel</Name>
+      <Link>AxAggregateDataEntity\FMRevenueByVehicleModel</Link>
+    </Content>
+    <Content Include="AxAggregateDataEntity\FMVehiclesByRentalStatus">
+      <SubType>Content</SubType>
+      <Name>FMVehiclesByRentalStatus</Name>
+      <Link>AxAggregateDataEntity\FMVehiclesByRentalStatus</Link>
+    </Content>
+    <Content Include="AxAggregateDimension\FMChargeType">
+      <SubType>Content</SubType>
+      <Name>FMChargeType</Name>
+      <Link>Aggregate Dimensions\FMChargeType</Link>
+    </Content>
+    <Content Include="AxAggregateDimension\FMCustomerProfile">
+      <SubType>Content</SubType>
+      <Name>FMCustomerProfile</Name>
+      <Link>Aggregate Dimensions\FMCustomerProfile</Link>
+    </Content>
+    <Content Include="AxAggregateDimension\FMVehicleProfile">
+      <SubType>Content</SubType>
+      <Name>FMVehicleProfile</Name>
+      <Link>Aggregate Dimensions\FMVehicleProfile</Link>
+    </Content>
+    <Content Include="AxAggregateMeasurement\FMAggregateMeasurements">
+      <SubType>Content</SubType>
+      <Name>FMAggregateMeasurements</Name>
+      <Link>Aggregate Measurements\FMAggregateMeasurements</Link>
+    </Content>
+    <Content Include="AxClass\DMFFMEventHandler">
+      <SubType>Content</SubType>
+      <Name>DMFFMEventHandler</Name>
+      <Link>Classes\DMFFMEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FMCanceledEventHandler">
+      <SubType>Content</SubType>
+      <Name>FMCanceledEventHandler</Name>
+      <Link>Classes\FMCanceledEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FMCleaning">
+      <SubType>Content</SubType>
+      <Name>FMCleaning</Name>
+      <Link>Classes\FMCleaning</Link>
+    </Content>
+    <Content Include="AxClass\FMCreateNewServiceWorkflow">
+      <SubType>Content</SubType>
+      <Name>FMCreateNewServiceWorkflow</Name>
+      <Link>Classes\FMCreateNewServiceWorkflow</Link>
+    </Content>
+    <Content Include="AxClass\FMCustomerListController">
+      <SubType>Content</SubType>
+      <Name>FMCustomerListController</Name>
+      <Link>Classes\FMCustomerListController</Link>
+    </Content>
+    <Content Include="AxClass\FMCustomerListRdlContract">
+      <SubType>Content</SubType>
+      <Name>FMCustomerListRdlContract</Name>
+      <Link>Classes\FMCustomerListRdlContract</Link>
+    </Content>
+    <Content Include="AxClass\FMCustomerListUIBuilder">
+      <SubType>Content</SubType>
+      <Name>FMCustomerListUIBuilder</Name>
+      <Link>Classes\FMCustomerListUIBuilder</Link>
+    </Content>
+    <Content Include="AxClass\FMDataHelper">
+      <SubType>Content</SubType>
+      <Name>FMDataHelper</Name>
+      <Link>Classes\FMDataHelper</Link>
+    </Content>
+    <Content Include="AxClass\FMDataHelperWF">
+      <SubType>Content</SubType>
+      <Name>FMDataHelperWF</Name>
+      <Link>Classes\FMDataHelperWF</Link>
+    </Content>
+    <Content Include="AxClass\FMExamComplete">
+      <SubType>Content</SubType>
+      <Name>FMExamComplete</Name>
+      <Link>Classes\FMExamComplete</Link>
+    </Content>
+    <Content Include="AxClass\FMExamine">
+      <SubType>Content</SubType>
+      <Name>FMExamine</Name>
+      <Link>Classes\FMExamine</Link>
+    </Content>
+    <Content Include="AxClass\FMExecutionEventHandler">
+      <SubType>Content</SubType>
+      <Name>FMExecutionEventHandler</Name>
+      <Link>Classes\FMExecutionEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FMPickupAndReturn">
+      <SubType>Content</SubType>
+      <Name>FMPickupAndReturn</Name>
+      <Link>Classes\FMPickupAndReturn</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalCheckoutCustomization">
+      <SubType>Content</SubType>
+      <Name>FMRentalCheckoutCustomization</Name>
+      <Link>Classes\FMRentalCheckoutCustomization</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalCheckoutProcessor">
+      <SubType>Content</SubType>
+      <Name>FMRentalCheckoutProcessor</Name>
+      <Link>Classes\FMRentalCheckoutProcessor</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalDetails">
+      <SubType>Content</SubType>
+      <Name>FMRentalDetails</Name>
+      <Link>Classes\FMRentalDetails</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalEventHandler">
+      <SubType>Content</SubType>
+      <Name>FMRentalEventHandler</Name>
+      <Link>Classes\FMRentalEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalsByCustContract">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustContract</Name>
+      <Link>Classes\FMRentalsByCustContract</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalsByCustController">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustController</Name>
+      <Link>Classes\FMRentalsByCustController</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalsByCustDP">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustDP</Name>
+      <Link>Classes\FMRentalsByCustDP</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalsByCustUIBuilder">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustUIBuilder</Name>
+      <Link>Classes\FMRentalsByCustUIBuilder</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalScenarios">
+      <SubType>Content</SubType>
+      <Name>FMRentalScenarios</Name>
+      <Link>Classes\FMRentalScenarios</Link>
+    </Content>
+    <Content Include="AxClass\FMService">
+      <SubType>Content</SubType>
+      <Name>FMService</Name>
+      <Link>Classes\FMService</Link>
+    </Content>
+    <Content Include="AxClass\FMTemplateRegistrations">
+      <SubType>Content</SubType>
+      <Name>FMTemplateRegistrations</Name>
+      <Link>Classes\FMTemplateRegistrations</Link>
+    </Content>
+    <Content Include="AxClass\FMTotalsEngine">
+      <SubType>Content</SubType>
+      <Name>FMTotalsEngine</Name>
+      <Link>Classes\FMTotalsEngine</Link>
+    </Content>
+    <Content Include="AxClass\FMTotalsEngineBase">
+      <SubType>Content</SubType>
+      <Name>FMTotalsEngineBase</Name>
+      <Link>Classes\FMTotalsEngineBase</Link>
+    </Content>
+    <Content Include="AxClass\FMVehicleDataContract">
+      <SubType>Content</SubType>
+      <Name>FMVehicleDataContract</Name>
+      <Link>Classes\FMVehicleDataContract</Link>
+    </Content>
+    <Content Include="AxClass\FMVehicleInventoryServiceClass">
+      <SubType>Content</SubType>
+      <Name>FMVehicleInventoryServiceClass</Name>
+      <Link>Classes\FMVehicleInventoryServiceClass</Link>
+    </Content>
+    <Content Include="AxClass\FMWorkflowCanceledEventHandler">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowCanceledEventHandler</Name>
+      <Link>Classes\FMWorkflowCanceledEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FMWorkflowDocument">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowDocument</Name>
+      <Link>Classes\FMWorkflowDocument</Link>
+    </Content>
+    <Content Include="AxClass\FMWorkflowSubmit">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowSubmit</Name>
+      <Link>Classes\FMWorkflowSubmit</Link>
+    </Content>
+    <Content Include="AxClass\IFMNewReservation">
+      <SubType>Content</SubType>
+      <Name>IFMNewReservation</Name>
+      <Link>Classes\IFMNewReservation</Link>
+    </Content>
+    <Content Include="AxClass\NumberSeqModuleRental">
+      <SubType>Content</SubType>
+      <Name>NumberSeqModuleRental</Name>
+      <Link>Classes\NumberSeqModuleRental</Link>
+    </Content>
+    <Content Include="AxClass\OfficeAppSampleAppletRegistration">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleAppletRegistration</Name>
+      <Link>Classes\OfficeAppSampleAppletRegistration</Link>
+    </Content>
+    <Content Include="AxDataEntityView\FMCustomerEntity">
+      <SubType>Content</SubType>
+      <Name>FMCustomerEntity</Name>
+      <Link>Data Entities\FMCustomerEntity</Link>
+    </Content>
+    <Content Include="AxDataEntityView\FMRentalEntity">
+      <SubType>Content</SubType>
+      <Name>FMRentalEntity</Name>
+      <Link>Data Entities\FMRentalEntity</Link>
+    </Content>
+    <Content Include="AxEdt\FMAddress">
+      <SubType>Content</SubType>
+      <Name>FMAddress</Name>
+      <Link>Extended Data Types\FMAddress</Link>
+    </Content>
+    <Content Include="AxEdt\FMAddressRecId">
+      <SubType>Content</SubType>
+      <Name>FMAddressRecId</Name>
+      <Link>Extended Data Types\FMAddressRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMCCExpiryDate">
+      <SubType>Content</SubType>
+      <Name>FMCCExpiryDate</Name>
+      <Link>Extended Data Types\FMCCExpiryDate</Link>
+    </Content>
+    <Content Include="AxEdt\FMChargesTotal">
+      <SubType>Content</SubType>
+      <Name>FMChargesTotal</Name>
+      <Link>Extended Data Types\FMChargesTotal</Link>
+    </Content>
+    <Content Include="AxEdt\FMChargeTypeId">
+      <SubType>Content</SubType>
+      <Name>FMChargeTypeId</Name>
+      <Link>Extended Data Types\FMChargeTypeId</Link>
+    </Content>
+    <Content Include="AxEdt\FMCity">
+      <SubType>Content</SubType>
+      <Name>FMCity</Name>
+      <Link>Extended Data Types\FMCity</Link>
+    </Content>
+    <Content Include="AxEdt\FMColorHexCode">
+      <SubType>Content</SubType>
+      <Name>FMColorHexCode</Name>
+      <Link>Extended Data Types\FMColorHexCode</Link>
+    </Content>
+    <Content Include="AxEdt\FMColorId">
+      <SubType>Content</SubType>
+      <Name>FMColorId</Name>
+      <Link>Extended Data Types\FMColorId</Link>
+    </Content>
+    <Content Include="AxEdt\FMColorName">
+      <SubType>Content</SubType>
+      <Name>FMColorName</Name>
+      <Link>Extended Data Types\FMColorName</Link>
+    </Content>
+    <Content Include="AxEdt\FMCost">
+      <SubType>Content</SubType>
+      <Name>FMCost</Name>
+      <Link>Extended Data Types\FMCost</Link>
+    </Content>
+    <Content Include="AxEdt\FMCountry">
+      <SubType>Content</SubType>
+      <Name>FMCountry</Name>
+      <Link>Extended Data Types\FMCountry</Link>
+    </Content>
+    <Content Include="AxEdt\FMCreditCardNum">
+      <SubType>Content</SubType>
+      <Name>FMCreditCardNum</Name>
+      <Link>Extended Data Types\FMCreditCardNum</Link>
+    </Content>
+    <Content Include="AxEdt\FMCustGroupId">
+      <SubType>Content</SubType>
+      <Name>FMCustGroupId</Name>
+      <Link>Extended Data Types\FMCustGroupId</Link>
+    </Content>
+    <Content Include="AxEdt\FMCustomerGroup">
+      <SubType>Content</SubType>
+      <Name>FMCustomerGroup</Name>
+      <Link>Extended Data Types\FMCustomerGroup</Link>
+    </Content>
+    <Content Include="AxEdt\FMCustomerRecId">
+      <SubType>Content</SubType>
+      <Name>FMCustomerRecId</Name>
+      <Link>Extended Data Types\FMCustomerRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMDataAreaId">
+      <SubType>Content</SubType>
+      <Name>FMDataAreaId</Name>
+      <Link>Extended Data Types\FMDataAreaId</Link>
+    </Content>
+    <Content Include="AxEdt\FMDescription">
+      <SubType>Content</SubType>
+      <Name>FMDescription</Name>
+      <Link>Extended Data Types\FMDescription</Link>
+    </Content>
+    <Content Include="AxEdt\FMDiscountId">
+      <SubType>Content</SubType>
+      <Name>FMDiscountId</Name>
+      <Link>Extended Data Types\FMDiscountId</Link>
+    </Content>
+    <Content Include="AxEdt\FMDriversLicense">
+      <SubType>Content</SubType>
+      <Name>FMDriversLicense</Name>
+      <Link>Extended Data Types\FMDriversLicense</Link>
+    </Content>
+    <Content Include="AxEdt\FMEmploymentSeniorityDateTime">
+      <SubType>Content</SubType>
+      <Name>FMEmploymentSeniorityDateTime</Name>
+      <Link>Extended Data Types\FMEmploymentSeniorityDateTime</Link>
+    </Content>
+    <Content Include="AxEdt\FMExtendedAmount">
+      <SubType>Content</SubType>
+      <Name>FMExtendedAmount</Name>
+      <Link>Extended Data Types\FMExtendedAmount</Link>
+    </Content>
+    <Content Include="AxEdt\FMFloorSpace">
+      <SubType>Content</SubType>
+      <Name>FMFloorSpace</Name>
+      <Link>Extended Data Types\FMFloorSpace</Link>
+    </Content>
+    <Content Include="AxEdt\FMFuelLevel">
+      <SubType>Content</SubType>
+      <Name>FMFuelLevel</Name>
+      <Link>Extended Data Types\FMFuelLevel</Link>
+    </Content>
+    <Content Include="AxEdt\FMGrossVehicleWeight">
+      <SubType>Content</SubType>
+      <Name>FMGrossVehicleWeight</Name>
+      <Link>Extended Data Types\FMGrossVehicleWeight</Link>
+    </Content>
+    <Content Include="AxEdt\FMGroundClearance">
+      <SubType>Content</SubType>
+      <Name>FMGroundClearance</Name>
+      <Link>Extended Data Types\FMGroundClearance</Link>
+    </Content>
+    <Content Include="AxEdt\FMMakeModelId">
+      <SubType>Content</SubType>
+      <Name>FMMakeModelId</Name>
+      <Link>Extended Data Types\FMMakeModelId</Link>
+    </Content>
+    <Content Include="AxEdt\FMMaxLoad">
+      <SubType>Content</SubType>
+      <Name>FMMaxLoad</Name>
+      <Link>Extended Data Types\FMMaxLoad</Link>
+    </Content>
+    <Content Include="AxEdt\FMMileage">
+      <SubType>Content</SubType>
+      <Name>FMMileage</Name>
+      <Link>Extended Data Types\FMMileage</Link>
+    </Content>
+    <Content Include="AxEdt\FMMovingSpace">
+      <SubType>Content</SubType>
+      <Name>FMMovingSpace</Name>
+      <Link>Extended Data Types\FMMovingSpace</Link>
+    </Content>
+    <Content Include="AxEdt\FMMPG">
+      <SubType>Content</SubType>
+      <Name>FMMPG</Name>
+      <Link>Extended Data Types\FMMPG</Link>
+    </Content>
+    <Content Include="AxEdt\FMName">
+      <SubType>Content</SubType>
+      <Name>FMName</Name>
+      <Link>Extended Data Types\FMName</Link>
+    </Content>
+    <Content Include="AxEdt\FMNote">
+      <SubType>Content</SubType>
+      <Name>FMNote</Name>
+      <Link>Extended Data Types\FMNote</Link>
+    </Content>
+    <Content Include="AxEdt\FMNumberOfDoors">
+      <SubType>Content</SubType>
+      <Name>FMNumberOfDoors</Name>
+      <Link>Extended Data Types\FMNumberOfDoors</Link>
+    </Content>
+    <Content Include="AxEdt\FMOverallRating">
+      <SubType>Content</SubType>
+      <Name>FMOverallRating</Name>
+      <Link>Extended Data Types\FMOverallRating</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentCCN">
+      <SubType>Content</SubType>
+      <Name>FMPaymentCCN</Name>
+      <Link>Extended Data Types\FMPaymentCCN</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentCreditExpiration">
+      <SubType>Content</SubType>
+      <Name>FMPaymentCreditExpiration</Name>
+      <Link>Extended Data Types\FMPaymentCreditExpiration</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentCVV">
+      <SubType>Content</SubType>
+      <Name>FMPaymentCVV</Name>
+      <Link>Extended Data Types\FMPaymentCVV</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentExpirationYear">
+      <SubType>Content</SubType>
+      <Name>FMPaymentExpirationYear</Name>
+      <Link>Extended Data Types\FMPaymentExpirationYear</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentInformationID">
+      <SubType>Content</SubType>
+      <Name>FMPaymentInformationID</Name>
+      <Link>Extended Data Types\FMPaymentInformationID</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentMonth">
+      <SubType>Content</SubType>
+      <Name>FMPaymentMonth</Name>
+      <Link>Extended Data Types\FMPaymentMonth</Link>
+    </Content>
+    <Content Include="AxEdt\FMPaymentName">
+      <SubType>Content</SubType>
+      <Name>FMPaymentName</Name>
+      <Link>Extended Data Types\FMPaymentName</Link>
+    </Content>
+    <Content Include="AxEdt\FMPersonnelNumberId_RU">
+      <SubType>Content</SubType>
+      <Name>FMPersonnelNumberId_RU</Name>
+      <Link>Extended Data Types\FMPersonnelNumberId_RU</Link>
+    </Content>
+    <Content Include="AxEdt\FMPerUnitAmount">
+      <SubType>Content</SubType>
+      <Name>FMPerUnitAmount</Name>
+      <Link>Extended Data Types\FMPerUnitAmount</Link>
+    </Content>
+    <Content Include="AxEdt\FMPositionId">
+      <SubType>Content</SubType>
+      <Name>FMPositionId</Name>
+      <Link>Extended Data Types\FMPositionId</Link>
+    </Content>
+    <Content Include="AxEdt\FMPositionWorkerAssignmentEndDate">
+      <SubType>Content</SubType>
+      <Name>FMPositionWorkerAssignmentEndDate</Name>
+      <Link>Extended Data Types\FMPositionWorkerAssignmentEndDate</Link>
+    </Content>
+    <Content Include="AxEdt\FMPositionWorkerAssignmentStartDate">
+      <SubType>Content</SubType>
+      <Name>FMPositionWorkerAssignmentStartDate</Name>
+      <Link>Extended Data Types\FMPositionWorkerAssignmentStartDate</Link>
+    </Content>
+    <Content Include="AxEdt\FMQuantity">
+      <SubType>Content</SubType>
+      <Name>FMQuantity</Name>
+      <Link>Extended Data Types\FMQuantity</Link>
+    </Content>
+    <Content Include="AxEdt\FMRate">
+      <SubType>Content</SubType>
+      <Name>FMRate</Name>
+      <Link>Extended Data Types\FMRate</Link>
+    </Content>
+    <Content Include="AxEdt\FMRentalAdditionDescription">
+      <SubType>Content</SubType>
+      <Name>FMRentalAdditionDescription</Name>
+      <Link>Extended Data Types\FMRentalAdditionDescription</Link>
+    </Content>
+    <Content Include="AxEdt\FMRentalAdditionName">
+      <SubType>Content</SubType>
+      <Name>FMRentalAdditionName</Name>
+      <Link>Extended Data Types\FMRentalAdditionName</Link>
+    </Content>
+    <Content Include="AxEdt\FMRentalChargeType">
+      <SubType>Content</SubType>
+      <Name>FMRentalChargeType</Name>
+      <Link>Extended Data Types\FMRentalChargeType</Link>
+    </Content>
+    <Content Include="AxEdt\FMRentalId">
+      <SubType>Content</SubType>
+      <Name>FMRentalId</Name>
+      <Link>Extended Data Types\FMRentalId</Link>
+    </Content>
+    <Content Include="AxEdt\FMRentalRecId">
+      <SubType>Content</SubType>
+      <Name>FMRentalRecId</Name>
+      <Link>Extended Data Types\FMRentalRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMRentalTotal">
+      <SubType>Content</SubType>
+      <Name>FMRentalTotal</Name>
+      <Link>Extended Data Types\FMRentalTotal</Link>
+    </Content>
+    <Content Include="AxEdt\FMReservationId">
+      <SubType>Content</SubType>
+      <Name>FMReservationId</Name>
+      <Link>Extended Data Types\FMReservationId</Link>
+    </Content>
+    <Content Include="AxEdt\FMRollOverRating">
+      <SubType>Content</SubType>
+      <Name>FMRollOverRating</Name>
+      <Link>Extended Data Types\FMRollOverRating</Link>
+    </Content>
+    <Content Include="AxEdt\FMSafetyRatingId">
+      <SubType>Content</SubType>
+      <Name>FMSafetyRatingId</Name>
+      <Link>Extended Data Types\FMSafetyRatingId</Link>
+    </Content>
+    <Content Include="AxEdt\FMSavingsTotal">
+      <SubType>Content</SubType>
+      <Name>FMSavingsTotal</Name>
+      <Link>Extended Data Types\FMSavingsTotal</Link>
+    </Content>
+    <Content Include="AxEdt\FMSeatingCapacity">
+      <SubType>Content</SubType>
+      <Name>FMSeatingCapacity</Name>
+      <Link>Extended Data Types\FMSeatingCapacity</Link>
+    </Content>
+    <Content Include="AxEdt\FMState">
+      <SubType>Content</SubType>
+      <Name>FMState</Name>
+      <Link>Extended Data Types\FMState</Link>
+    </Content>
+    <Content Include="AxEdt\FMSUVSafetyRatingRecId">
+      <SubType>Content</SubType>
+      <Name>FMSUVSafetyRatingRecId</Name>
+      <Link>Extended Data Types\FMSUVSafetyRatingRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMThirdRowCapacity">
+      <SubType>Content</SubType>
+      <Name>FMThirdRowCapacity</Name>
+      <Link>Extended Data Types\FMThirdRowCapacity</Link>
+    </Content>
+    <Content Include="AxEdt\FMTitleId">
+      <SubType>Content</SubType>
+      <Name>FMTitleId</Name>
+      <Link>Extended Data Types\FMTitleId</Link>
+    </Content>
+    <Content Include="AxEdt\FMTotalRentals">
+      <SubType>Content</SubType>
+      <Name>FMTotalRentals</Name>
+      <Link>Extended Data Types\FMTotalRentals</Link>
+    </Content>
+    <Content Include="AxEdt\FMTransDate">
+      <SubType>Content</SubType>
+      <Name>FMTransDate</Name>
+      <Link>Extended Data Types\FMTransDate</Link>
+    </Content>
+    <Content Include="AxEdt\FMTurningRadius">
+      <SubType>Content</SubType>
+      <Name>FMTurningRadius</Name>
+      <Link>Extended Data Types\FMTurningRadius</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleId">
+      <SubType>Content</SubType>
+      <Name>FMVehicleId</Name>
+      <Link>Extended Data Types\FMVehicleId</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleMakeId">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMakeId</Name>
+      <Link>Extended Data Types\FMVehicleMakeId</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleMakeRecId">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMakeRecId</Name>
+      <Link>Extended Data Types\FMVehicleMakeRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleModelId">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModelId</Name>
+      <Link>Extended Data Types\FMVehicleModelId</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleModelRecId">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModelRecId</Name>
+      <Link>Extended Data Types\FMVehicleModelRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleModelYear">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModelYear</Name>
+      <Link>Extended Data Types\FMVehicleModelYear</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleRecId">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRecId</Name>
+      <Link>Extended Data Types\FMVehicleRecId</Link>
+    </Content>
+    <Content Include="AxEdt\FMVehicleTotal">
+      <SubType>Content</SubType>
+      <Name>FMVehicleTotal</Name>
+      <Link>Extended Data Types\FMVehicleTotal</Link>
+    </Content>
+    <Content Include="AxEdt\FMVIN">
+      <SubType>Content</SubType>
+      <Name>FMVIN</Name>
+      <Link>Extended Data Types\FMVIN</Link>
+    </Content>
+    <Content Include="AxEdt\FMWorkerOfficeLocation">
+      <SubType>Content</SubType>
+      <Name>FMWorkerOfficeLocation</Name>
+      <Link>Extended Data Types\FMWorkerOfficeLocation</Link>
+    </Content>
+    <Content Include="AxEdt\FMZipCode">
+      <SubType>Content</SubType>
+      <Name>FMZipCode</Name>
+      <Link>Extended Data Types\FMZipCode</Link>
+    </Content>
+    <Content Include="AxEnumExtension\NumberSeqModule.Extension">
+      <SubType>Content</SubType>
+      <Name>NumberSeqModule.Extension</Name>
+      <Link>Base Enum Extensions\NumberSeqModule.Extension</Link>
+    </Content>
+    <Content Include="AxEnum\FMColor">
+      <SubType>Content</SubType>
+      <Name>FMColor</Name>
+      <Link>Base Enums\FMColor</Link>
+    </Content>
+    <Content Include="AxEnum\FMDriveType">
+      <SubType>Content</SubType>
+      <Name>FMDriveType</Name>
+      <Link>Base Enums\FMDriveType</Link>
+    </Content>
+    <Content Include="AxEnum\FMFuelType">
+      <SubType>Content</SubType>
+      <Name>FMFuelType</Name>
+      <Link>Base Enums\FMFuelType</Link>
+    </Content>
+    <Content Include="AxEnum\FMGPSEnabled">
+      <SubType>Content</SubType>
+      <Name>FMGPSEnabled</Name>
+      <Link>Base Enums\FMGPSEnabled</Link>
+    </Content>
+    <Content Include="AxEnum\FMPaymentState">
+      <SubType>Content</SubType>
+      <Name>FMPaymentState</Name>
+      <Link>Base Enums\FMPaymentState</Link>
+    </Content>
+    <Content Include="AxEnum\FMRelationshipGroup">
+      <SubType>Content</SubType>
+      <Name>FMRelationshipGroup</Name>
+      <Link>Base Enums\FMRelationshipGroup</Link>
+    </Content>
+    <Content Include="AxEnum\FMReservationState">
+      <SubType>Content</SubType>
+      <Name>FMReservationState</Name>
+      <Link>Base Enums\FMReservationState</Link>
+    </Content>
+    <Content Include="AxEnum\FMServiceType">
+      <SubType>Content</SubType>
+      <Name>FMServiceType</Name>
+      <Link>Base Enums\FMServiceType</Link>
+    </Content>
+    <Content Include="AxEnum\FMStatus">
+      <SubType>Content</SubType>
+      <Name>FMStatus</Name>
+      <Link>Base Enums\FMStatus</Link>
+    </Content>
+    <Content Include="AxEnum\FMTransmission">
+      <SubType>Content</SubType>
+      <Name>FMTransmission</Name>
+      <Link>Base Enums\FMTransmission</Link>
+    </Content>
+    <Content Include="AxEnum\FMVehicleStatus">
+      <SubType>Content</SubType>
+      <Name>FMVehicleStatus</Name>
+      <Link>Base Enums\FMVehicleStatus</Link>
+    </Content>
+    <Content Include="AxEnum\FMVehicle_DisplayRelationType">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_DisplayRelationType</Name>
+      <Link>Base Enums\FMVehicle_DisplayRelationType</Link>
+    </Content>
+    <Content Include="AxForm\FmBiChartPart_VehicleByModel">
+      <SubType>Content</SubType>
+      <Name>FmBiChartPart_VehicleByModel</Name>
+      <Link>Forms\FmBiChartPart_VehicleByModel</Link>
+    </Content>
+    <Content Include="AxForm\FmBiChartsPart">
+      <SubType>Content</SubType>
+      <Name>FmBiChartsPart</Name>
+      <Link>Forms\FmBiChartsPart</Link>
+    </Content>
+    <Content Include="AxForm\FMBiCustomerRentalsPart">
+      <SubType>Content</SubType>
+      <Name>FMBiCustomerRentalsPart</Name>
+      <Link>Forms\FMBiCustomerRentalsPart</Link>
+    </Content>
+    <Content Include="AxForm\FMBiReservationsByCustomer">
+      <SubType>Content</SubType>
+      <Name>FMBiReservationsByCustomer</Name>
+      <Link>Forms\FMBiReservationsByCustomer</Link>
+    </Content>
+    <Content Include="AxForm\FMBiReservationsByCustomerState">
+      <SubType>Content</SubType>
+      <Name>FMBiReservationsByCustomerState</Name>
+      <Link>Forms\FMBiReservationsByCustomerState</Link>
+    </Content>
+    <Content Include="AxForm\FMBiReservationsChart">
+      <SubType>Content</SubType>
+      <Name>FMBiReservationsChart</Name>
+      <Link>Forms\FMBiReservationsChart</Link>
+    </Content>
+    <Content Include="AxForm\FMClerkWorkspace">
+      <SubType>Content</SubType>
+      <Name>FMClerkWorkspace</Name>
+      <Link>Forms\FMClerkWorkspace</Link>
+    </Content>
+    <Content Include="AxForm\FMCompleteRental">
+      <SubType>Content</SubType>
+      <Name>FMCompleteRental</Name>
+      <Link>Forms\FMCompleteRental</Link>
+    </Content>
+    <Content Include="AxForm\FMCustomer">
+      <SubType>Content</SubType>
+      <Name>FMCustomer</Name>
+      <Link>Forms\FMCustomer</Link>
+    </Content>
+    <Content Include="AxForm\FMCustomerSlider">
+      <SubType>Content</SubType>
+      <Name>FMCustomerSlider</Name>
+      <Link>Forms\FMCustomerSlider</Link>
+    </Content>
+    <Content Include="AxForm\FMMakeModel_FactBox">
+      <SubType>Content</SubType>
+      <Name>FMMakeModel_FactBox</Name>
+      <Link>Forms\FMMakeModel_FactBox</Link>
+    </Content>
+    <Content Include="AxForm\FMNewReservation">
+      <SubType>Content</SubType>
+      <Name>FMNewReservation</Name>
+      <Link>Forms\FMNewReservation</Link>
+    </Content>
+    <Content Include="AxForm\FmPickAccessories">
+      <SubType>Content</SubType>
+      <Name>FmPickAccessories</Name>
+      <Link>Forms\FmPickAccessories</Link>
+    </Content>
+    <Content Include="AxForm\FMPickingUpTodayPart">
+      <SubType>Content</SubType>
+      <Name>FMPickingUpTodayPart</Name>
+      <Link>Forms\FMPickingUpTodayPart</Link>
+    </Content>
+    <Content Include="AxForm\FMRental">
+      <SubType>Content</SubType>
+      <Name>FMRental</Name>
+      <Link>Forms\FMRental</Link>
+    </Content>
+    <Content Include="AxForm\FMRentalTotals_FactBox">
+      <SubType>Content</SubType>
+      <Name>FMRentalTotals_FactBox</Name>
+      <Link>Forms\FMRentalTotals_FactBox</Link>
+    </Content>
+    <Content Include="AxForm\FMReservationsByCustPart">
+      <SubType>Content</SubType>
+      <Name>FMReservationsByCustPart</Name>
+      <Link>Forms\FMReservationsByCustPart</Link>
+    </Content>
+    <Content Include="AxForm\FMReservationsReport">
+      <SubType>Content</SubType>
+      <Name>FMReservationsReport</Name>
+      <Link>Forms\FMReservationsReport</Link>
+    </Content>
+    <Content Include="AxForm\FMReturningRentalTodayPart">
+      <SubType>Content</SubType>
+      <Name>FMReturningRentalTodayPart</Name>
+      <Link>Forms\FMReturningRentalTodayPart</Link>
+    </Content>
+    <Content Include="AxForm\FMSetup">
+      <SubType>Content</SubType>
+      <Name>FMSetup</Name>
+      <Link>Forms\FMSetup</Link>
+    </Content>
+    <Content Include="AxForm\FMStartRental">
+      <SubType>Content</SubType>
+      <Name>FMStartRental</Name>
+      <Link>Forms\FMStartRental</Link>
+    </Content>
+    <Content Include="AxForm\FMVehicle">
+      <SubType>Content</SubType>
+      <Name>FMVehicle</Name>
+      <Link>Forms\FMVehicle</Link>
+    </Content>
+    <Content Include="AxForm\FMVehicleMaintenance">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance</Name>
+      <Link>Forms\FMVehicleMaintenance</Link>
+    </Content>
+    <Content Include="AxForm\FMVehicleModel_Part">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModel_Part</Name>
+      <Link>Forms\FMVehicleModel_Part</Link>
+    </Content>
+    <Content Include="AxForm\FMVehicleRateDateManager">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRateDateManager</Name>
+      <Link>Forms\FMVehicleRateDateManager</Link>
+    </Content>
+    <Content Include="AxForm\FMVehicleRevenuePart">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRevenuePart</Name>
+      <Link>Forms\FMVehicleRevenuePart</Link>
+    </Content>
+    <Content Include="AxKPI\FMRevenue">
+      <SubType>Content</SubType>
+      <Name>FMRevenue</Name>
+      <Link>KPIs\FMRevenue</Link>
+    </Content>
+    <Content Include="AxKPI\FMRevenueExecutiveCurrentPrevious">
+      <SubType>Content</SubType>
+      <Name>FMRevenueExecutiveCurrentPrevious</Name>
+      <Link>KPIs\FMRevenueExecutiveCurrentPrevious</Link>
+    </Content>
+    <Content Include="AxKPI\FMRevenueNonExecutiveCurrentPrevious">
+      <SubType>Content</SubType>
+      <Name>FMRevenueNonExecutiveCurrentPrevious</Name>
+      <Link>KPIs\FMRevenueNonExecutiveCurrentPrevious</Link>
+    </Content>
+    <Content Include="AxLabelFile\FleetSecurityDuties_en-US">
+      <SubType>Content</SubType>
+      <Name>FleetSecurityDuties_en-US</Name>
+      <Link>Label Files\FleetSecurityDuties_en-US</Link>
+    </Content>
+    <Content Include="AxLabelFile\FLM_en-US">
+      <SubType>Content</SubType>
+      <Name>FLM_en-US</Name>
+      <Link>Label Files\FLM_en-US</Link>
+    </Content>
+    <Content Include="AxMenuExtension\MainMenu.FleetManagement">
+      <SubType>Content</SubType>
+      <Name>MainMenu.FleetManagement</Name>
+      <Link>Menu Extensions\MainMenu.FleetManagement</Link>
+    </Content>
+    <Content Include="AxMenuExtension\NavPaneMenu.Fleet">
+      <SubType>Content</SubType>
+      <Name>NavPaneMenu.Fleet</Name>
+      <Link>Menu Extensions\NavPaneMenu.Fleet</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMCleaningComplete">
+      <SubType>Content</SubType>
+      <Name>FMCleaningComplete</Name>
+      <Link>Action Menu Items\FMCleaningComplete</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMDeleteCustomer">
+      <SubType>Content</SubType>
+      <Name>FMDeleteCustomer</Name>
+      <Link>Action Menu Items\FMDeleteCustomer</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMDeleteRental">
+      <SubType>Content</SubType>
+      <Name>FMDeleteRental</Name>
+      <Link>Action Menu Items\FMDeleteRental</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMDeleteVehicle">
+      <SubType>Content</SubType>
+      <Name>FMDeleteVehicle</Name>
+      <Link>Action Menu Items\FMDeleteVehicle</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMExaminatonComplete">
+      <SubType>Content</SubType>
+      <Name>FMExaminatonComplete</Name>
+      <Link>Action Menu Items\FMExaminatonComplete</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMServiceComplete">
+      <SubType>Content</SubType>
+      <Name>FMServiceComplete</Name>
+      <Link>Action Menu Items\FMServiceComplete</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMSubmitMenuItem">
+      <SubType>Content</SubType>
+      <Name>FMSubmitMenuItem</Name>
+      <Link>Action Menu Items\FMSubmitMenuItem</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMWorkflowApproval">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowApproval</Name>
+      <Link>Action Menu Items\FMWorkflowApproval</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMWorkflowDelegate">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowDelegate</Name>
+      <Link>Action Menu Items\FMWorkflowDelegate</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMWorkflowDeny">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowDeny</Name>
+      <Link>Action Menu Items\FMWorkflowDeny</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMWorkflowReject">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowReject</Name>
+      <Link>Action Menu Items\FMWorkflowReject</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMWorkflowRequestChange">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowRequestChange</Name>
+      <Link>Action Menu Items\FMWorkflowRequestChange</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FMWorkflowResubmit">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowResubmit</Name>
+      <Link>Action Menu Items\FMWorkflowResubmit</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMBiChartPart_VehicleByModel">
+      <SubType>Content</SubType>
+      <Name>FMBiChartPart_VehicleByModel</Name>
+      <Link>Display Menu Items\FMBiChartPart_VehicleByModel</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMBiChartsPart">
+      <SubType>Content</SubType>
+      <Name>FMBiChartsPart</Name>
+      <Link>Display Menu Items\FMBiChartsPart</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMBiCustomerRentalsPart">
+      <SubType>Content</SubType>
+      <Name>FMBiCustomerRentalsPart</Name>
+      <Link>Display Menu Items\FMBiCustomerRentalsPart</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMBiReservationsByCustomer">
+      <SubType>Content</SubType>
+      <Name>FMBiReservationsByCustomer</Name>
+      <Link>Display Menu Items\FMBiReservationsByCustomer</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMBiReservationsByCustomerState">
+      <SubType>Content</SubType>
+      <Name>FMBiReservationsByCustomerState</Name>
+      <Link>Display Menu Items\FMBiReservationsByCustomerState</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMBiReservationsChart">
+      <SubType>Content</SubType>
+      <Name>FMBiReservationsChart</Name>
+      <Link>Display Menu Items\FMBiReservationsChart</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMClerkWorkspace">
+      <SubType>Content</SubType>
+      <Name>FMClerkWorkspace</Name>
+      <Link>Display Menu Items\FMClerkWorkspace</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMCompleteRental">
+      <SubType>Content</SubType>
+      <Name>FMCompleteRental</Name>
+      <Link>Display Menu Items\FMCompleteRental</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMCustomer">
+      <SubType>Content</SubType>
+      <Name>FMCustomer</Name>
+      <Link>Display Menu Items\FMCustomer</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMCustomerSlider">
+      <SubType>Content</SubType>
+      <Name>FMCustomerSlider</Name>
+      <Link>Display Menu Items\FMCustomerSlider</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMMakeModel_FactBox">
+      <SubType>Content</SubType>
+      <Name>FMMakeModel_FactBox</Name>
+      <Link>Display Menu Items\FMMakeModel_FactBox</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMNewReservation">
+      <SubType>Content</SubType>
+      <Name>FMNewReservation</Name>
+      <Link>Display Menu Items\FMNewReservation</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FmPickAccessories">
+      <SubType>Content</SubType>
+      <Name>FmPickAccessories</Name>
+      <Link>Display Menu Items\FmPickAccessories</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMPickingUpTodayPart">
+      <SubType>Content</SubType>
+      <Name>FMPickingUpTodayPart</Name>
+      <Link>Display Menu Items\FMPickingUpTodayPart</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMRental">
+      <SubType>Content</SubType>
+      <Name>FMRental</Name>
+      <Link>Display Menu Items\FMRental</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMRentalTotals_FactBox">
+      <SubType>Content</SubType>
+      <Name>FMRentalTotals_FactBox</Name>
+      <Link>Display Menu Items\FMRentalTotals_FactBox</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMRental_Overdue">
+      <SubType>Content</SubType>
+      <Name>FMRental_Overdue</Name>
+      <Link>Display Menu Items\FMRental_Overdue</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMRental_PickingUpToday">
+      <SubType>Content</SubType>
+      <Name>FMRental_PickingUpToday</Name>
+      <Link>Display Menu Items\FMRental_PickingUpToday</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMRental_ReturningToday">
+      <SubType>Content</SubType>
+      <Name>FMRental_ReturningToday</Name>
+      <Link>Display Menu Items\FMRental_ReturningToday</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMRental_Upcoming">
+      <SubType>Content</SubType>
+      <Name>FMRental_Upcoming</Name>
+      <Link>Display Menu Items\FMRental_Upcoming</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMReservationsByCustPart">
+      <SubType>Content</SubType>
+      <Name>FMReservationsByCustPart</Name>
+      <Link>Display Menu Items\FMReservationsByCustPart</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMReservationsReport">
+      <SubType>Content</SubType>
+      <Name>FMReservationsReport</Name>
+      <Link>Display Menu Items\FMReservationsReport</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMReturningRentalTodayPart">
+      <SubType>Content</SubType>
+      <Name>FMReturningRentalTodayPart</Name>
+      <Link>Display Menu Items\FMReturningRentalTodayPart</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMSetup">
+      <SubType>Content</SubType>
+      <Name>FMSetup</Name>
+      <Link>Display Menu Items\FMSetup</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMStartRental">
+      <SubType>Content</SubType>
+      <Name>FMStartRental</Name>
+      <Link>Display Menu Items\FMStartRental</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle">
+      <SubType>Content</SubType>
+      <Name>FMVehicle</Name>
+      <Link>Display Menu Items\FMVehicle</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FmVehicleMaintenance">
+      <SubType>Content</SubType>
+      <Name>FmVehicleMaintenance</Name>
+      <Link>Display Menu Items\FmVehicleMaintenance</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleMaintenance_Approval">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Approval</Name>
+      <Link>Display Menu Items\FMVehicleMaintenance_Approval</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleMaintenance_Cleaning">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Cleaning</Name>
+      <Link>Display Menu Items\FMVehicleMaintenance_Cleaning</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleMaintenance_Completed">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Completed</Name>
+      <Link>Display Menu Items\FMVehicleMaintenance_Completed</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleMaintenance_InProgress">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_InProgress</Name>
+      <Link>Display Menu Items\FMVehicleMaintenance_InProgress</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleMaintenance_Service">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Service</Name>
+      <Link>Display Menu Items\FMVehicleMaintenance_Service</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleModel_Part">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModel_Part</Name>
+      <Link>Display Menu Items\FMVehicleModel_Part</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicleRateDateManager">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRateDateManager</Name>
+      <Link>Display Menu Items\FMVehicleRateDateManager</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle_Assigned">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Assigned</Name>
+      <Link>Display Menu Items\FMVehicle_Assigned</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle_Avail">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Avail</Name>
+      <Link>Display Menu Items\FMVehicle_Avail</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle_Cars">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Cars</Name>
+      <Link>Display Menu Items\FMVehicle_Cars</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle_Recalled">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Recalled</Name>
+      <Link>Display Menu Items\FMVehicle_Recalled</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle_SUVs">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_SUVs</Name>
+      <Link>Display Menu Items\FMVehicle_SUVs</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMVehicle_Trucks">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Trucks</Name>
+      <Link>Display Menu Items\FMVehicle_Trucks</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMWorkflowConfiguration">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowConfiguration</Name>
+      <Link>Display Menu Items\FMWorkflowConfiguration</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FMWorkflowDocumentMenuItem">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowDocumentMenuItem</Name>
+      <Link>Display Menu Items\FMWorkflowDocumentMenuItem</Link>
+    </Content>
+    <Content Include="AxMenuItemOutput\FMCustomersListReport">
+      <SubType>Content</SubType>
+      <Name>FMCustomersListReport</Name>
+      <Link>Output Menu Items\FMCustomersListReport</Link>
+    </Content>
+    <Content Include="AxMenuItemOutput\FMRentalsByCustReport">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustReport</Name>
+      <Link>Output Menu Items\FMRentalsByCustReport</Link>
+    </Content>
+    <Content Include="AxMenu\FleetManagement">
+      <SubType>Content</SubType>
+      <Name>FleetManagement</Name>
+      <Link>Menus\FleetManagement</Link>
+    </Content>
+    <Content Include="AxQuery\FMAxDVehicleQuery">
+      <SubType>Content</SubType>
+      <Name>FMAxDVehicleQuery</Name>
+      <Link>Simple Queries\FMAxDVehicleQuery</Link>
+    </Content>
+    <Content Include="AxQuery\FMBURestrict">
+      <SubType>Content</SubType>
+      <Name>FMBURestrict</Name>
+      <Link>Simple Queries\FMBURestrict</Link>
+    </Content>
+    <Content Include="AxQuery\FMCustomers">
+      <SubType>Content</SubType>
+      <Name>FMCustomers</Name>
+      <Link>Simple Queries\FMCustomers</Link>
+    </Content>
+    <Content Include="AxQuery\FMDyanmicRoleAssignmentWorkerPosition">
+      <SubType>Content</SubType>
+      <Name>FMDyanmicRoleAssignmentWorkerPosition</Name>
+      <Link>Simple Queries\FMDyanmicRoleAssignmentWorkerPosition</Link>
+    </Content>
+    <Content Include="AxQuery\FMDynamicRoleAssignmentWorkerTitle">
+      <SubType>Content</SubType>
+      <Name>FMDynamicRoleAssignmentWorkerTitle</Name>
+      <Link>Simple Queries\FMDynamicRoleAssignmentWorkerTitle</Link>
+    </Content>
+    <Content Include="AxQuery\FMInternalOrganizationsRestrict">
+      <SubType>Content</SubType>
+      <Name>FMInternalOrganizationsRestrict</Name>
+      <Link>Simple Queries\FMInternalOrganizationsRestrict</Link>
+    </Content>
+    <Content Include="AxQuery\FMPickupAndReturnQuery">
+      <SubType>Content</SubType>
+      <Name>FMPickupAndReturnQuery</Name>
+      <Link>Simple Queries\FMPickupAndReturnQuery</Link>
+    </Content>
+    <Content Include="AxQuery\FMPickupAndReturn_PickingUpToday">
+      <SubType>Content</SubType>
+      <Name>FMPickupAndReturn_PickingUpToday</Name>
+      <Link>Simple Queries\FMPickupAndReturn_PickingUpToday</Link>
+    </Content>
+    <Content Include="AxQuery\FMPickupAndReturn_ReturningToday">
+      <SubType>Content</SubType>
+      <Name>FMPickupAndReturn_ReturningToday</Name>
+      <Link>Simple Queries\FMPickupAndReturn_ReturningToday</Link>
+    </Content>
+    <Content Include="AxQuery\FMRental">
+      <SubType>Content</SubType>
+      <Name>FMRental</Name>
+      <Link>Simple Queries\FMRental</Link>
+    </Content>
+    <Content Include="AxQuery\FMRentalChargesQry">
+      <SubType>Content</SubType>
+      <Name>FMRentalChargesQry</Name>
+      <Link>Simple Queries\FMRentalChargesQry</Link>
+    </Content>
+    <Content Include="AxQuery\FMRentalsAndVehicle">
+      <SubType>Content</SubType>
+      <Name>FMRentalsAndVehicle</Name>
+      <Link>Simple Queries\FMRentalsAndVehicle</Link>
+    </Content>
+    <Content Include="AxQuery\FMRentalsByCustomer">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustomer</Name>
+      <Link>Simple Queries\FMRentalsByCustomer</Link>
+    </Content>
+    <Content Include="AxQuery\FMRentalsByCustomerState">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustomerState</Name>
+      <Link>Simple Queries\FMRentalsByCustomerState</Link>
+    </Content>
+    <Content Include="AxQuery\FMRentalsByStatus">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByStatus</Name>
+      <Link>Simple Queries\FMRentalsByStatus</Link>
+    </Content>
+    <Content Include="AxQuery\FMRentalsDetails">
+      <SubType>Content</SubType>
+      <Name>FMRentalsDetails</Name>
+      <Link>Simple Queries\FMRentalsDetails</Link>
+    </Content>
+    <Content Include="AxQuery\FMRental_Current">
+      <SubType>Content</SubType>
+      <Name>FMRental_Current</Name>
+      <Link>Simple Queries\FMRental_Current</Link>
+    </Content>
+    <Content Include="AxQuery\FmRental_Overdue">
+      <SubType>Content</SubType>
+      <Name>FmRental_Overdue</Name>
+      <Link>Simple Queries\FmRental_Overdue</Link>
+    </Content>
+    <Content Include="AxQuery\FMRental_PickingUpToday">
+      <SubType>Content</SubType>
+      <Name>FMRental_PickingUpToday</Name>
+      <Link>Simple Queries\FMRental_PickingUpToday</Link>
+    </Content>
+    <Content Include="AxQuery\FMRental_PreviewPart">
+      <SubType>Content</SubType>
+      <Name>FMRental_PreviewPart</Name>
+      <Link>Simple Queries\FMRental_PreviewPart</Link>
+    </Content>
+    <Content Include="AxQuery\FMRental_ReturningToday">
+      <SubType>Content</SubType>
+      <Name>FMRental_ReturningToday</Name>
+      <Link>Simple Queries\FMRental_ReturningToday</Link>
+    </Content>
+    <Content Include="AxQuery\FMSelfServ">
+      <SubType>Content</SubType>
+      <Name>FMSelfServ</Name>
+      <Link>Simple Queries\FMSelfServ</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle">
+      <SubType>Content</SubType>
+      <Name>FMVehicle</Name>
+      <Link>Simple Queries\FMVehicle</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleDetailsPart">
+      <SubType>Content</SubType>
+      <Name>FMVehicleDetailsPart</Name>
+      <Link>Simple Queries\FMVehicleDetailsPart</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleLists">
+      <SubType>Content</SubType>
+      <Name>FMVehicleLists</Name>
+      <Link>Simple Queries\FMVehicleLists</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleMaintenance">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance</Name>
+      <Link>Simple Queries\FMVehicleMaintenance</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleMaintenance_Approval">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Approval</Name>
+      <Link>Simple Queries\FMVehicleMaintenance_Approval</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleMaintenance_Cleaning">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Cleaning</Name>
+      <Link>Simple Queries\FMVehicleMaintenance_Cleaning</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleMaintenance_Completed">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Completed</Name>
+      <Link>Simple Queries\FMVehicleMaintenance_Completed</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleMaintenance_InProgress">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_InProgress</Name>
+      <Link>Simple Queries\FMVehicleMaintenance_InProgress</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleMaintenance_Service">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance_Service</Name>
+      <Link>Simple Queries\FMVehicleMaintenance_Service</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleModel">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModel</Name>
+      <Link>Simple Queries\FMVehicleModel</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicleRecentRentals">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRecentRentals</Name>
+      <Link>Simple Queries\FMVehicleRecentRentals</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicles">
+      <SubType>Content</SubType>
+      <Name>FMVehicles</Name>
+      <Link>Simple Queries\FMVehicles</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle_Assigned">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Assigned</Name>
+      <Link>Simple Queries\FMVehicle_Assigned</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle_Avail">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Avail</Name>
+      <Link>Simple Queries\FMVehicle_Avail</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle_Cars">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Cars</Name>
+      <Link>Simple Queries\FMVehicle_Cars</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle_Recalled">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Recalled</Name>
+      <Link>Simple Queries\FMVehicle_Recalled</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle_SUVs">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_SUVs</Name>
+      <Link>Simple Queries\FMVehicle_SUVs</Link>
+    </Content>
+    <Content Include="AxQuery\FMVehicle_Trucks">
+      <SubType>Content</SubType>
+      <Name>FMVehicle_Trucks</Name>
+      <Link>Simple Queries\FMVehicle_Trucks</Link>
+    </Content>
+    <Content Include="AxQuery\FMWorkflowQuery">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowQuery</Name>
+      <Link>Simple Queries\FMWorkflowQuery</Link>
+    </Content>
+    <Content Include="AxReport\FMCustomerList">
+      <SubType>Content</SubType>
+      <Name>FMCustomerList</Name>
+      <Link>Reports\FMCustomerList</Link>
+    </Content>
+    <Content Include="AxReport\FMRentalsByCustomer">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustomer</Name>
+      <Link>Reports\FMRentalsByCustomer</Link>
+    </Content>
+    <Content Include="AxResource\Adatum_Four_red">
+      <SubType>Content</SubType>
+      <Name>Adatum_Four_red</Name>
+      <Link>Resources\Adatum_Four_red</Link>
+    </Content>
+    <Content Include="AxResource\Adatum_Ninetynine_orange">
+      <SubType>Content</SubType>
+      <Name>Adatum_Ninetynine_orange</Name>
+      <Link>Resources\Adatum_Ninetynine_orange</Link>
+    </Content>
+    <Content Include="AxResource\Adatum_One_white">
+      <SubType>Content</SubType>
+      <Name>Adatum_One_white</Name>
+      <Link>Resources\Adatum_One_white</Link>
+    </Content>
+    <Content Include="AxResource\AdventureWorks_Fuji_red">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Fuji_red</Name>
+      <Link>Resources\AdventureWorks_Fuji_red</Link>
+    </Content>
+    <Content Include="AxResource\AdventureWorks_Fuji_white">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Fuji_white</Name>
+      <Link>Resources\AdventureWorks_Fuji_white</Link>
+    </Content>
+    <Content Include="AxResource\AdventureWorks_Makalu_red">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Makalu_red</Name>
+      <Link>Resources\AdventureWorks_Makalu_red</Link>
+    </Content>
+    <Content Include="AxResource\AdventureWorks_Makalu_white">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Makalu_white</Name>
+      <Link>Resources\AdventureWorks_Makalu_white</Link>
+    </Content>
+    <Content Include="AxResource\AdventureWorks_Shasta_gray">
+      <SubType>Content</SubType>
+      <Name>AdventureWorks_Shasta_gray</Name>
+      <Link>Resources\AdventureWorks_Shasta_gray</Link>
+    </Content>
+    <Content Include="AxResource\AhmedMansoor_png">
+      <SubType>Content</SubType>
+      <Name>AhmedMansoor_png</Name>
+      <Link>Resources\AhmedMansoor_png</Link>
+    </Content>
+    <Content Include="AxResource\CarbonFee">
+      <SubType>Content</SubType>
+      <Name>CarbonFee</Name>
+      <Link>Resources\CarbonFee</Link>
+    </Content>
+    <Content Include="AxResource\ChildSeat">
+      <SubType>Content</SubType>
+      <Name>ChildSeat</Name>
+      <Link>Resources\ChildSeat</Link>
+    </Content>
+    <Content Include="AxResource\DriversLicense_png">
+      <SubType>Content</SubType>
+      <Name>DriversLicense_png</Name>
+      <Link>Resources\DriversLicense_png</Link>
+    </Content>
+    <Content Include="AxResource\FMCustomers">
+      <SubType>Content</SubType>
+      <Name>FMCustomers</Name>
+      <Link>Resources\FMCustomers</Link>
+    </Content>
+    <Content Include="AxResource\FMTemplateCustomerInformation">
+      <SubType>Content</SubType>
+      <Name>FMTemplateCustomerInformation</Name>
+      <Link>Resources\FMTemplateCustomerInformation</Link>
+    </Content>
+    <Content Include="AxResource\FMTemplateCustomersWithLocations">
+      <SubType>Content</SubType>
+      <Name>FMTemplateCustomersWithLocations</Name>
+      <Link>Resources\FMTemplateCustomersWithLocations</Link>
+    </Content>
+    <Content Include="AxResource\FMTemplateRentalsByStatus">
+      <SubType>Content</SubType>
+      <Name>FMTemplateRentalsByStatus</Name>
+      <Link>Resources\FMTemplateRentalsByStatus</Link>
+    </Content>
+    <Content Include="AxResource\GPS">
+      <SubType>Content</SubType>
+      <Name>GPS</Name>
+      <Link>Resources\GPS</Link>
+    </Content>
+    <Content Include="AxResource\JohnKyte_png">
+      <SubType>Content</SubType>
+      <Name>JohnKyte_png</Name>
+      <Link>Resources\JohnKyte_png</Link>
+    </Content>
+    <Content Include="AxResource\JohnRamirez_png">
+      <SubType>Content</SubType>
+      <Name>JohnRamirez_png</Name>
+      <Link>Resources\JohnRamirez_png</Link>
+    </Content>
+    <Content Include="AxResource\LarsGiusti_png">
+      <SubType>Content</SubType>
+      <Name>LarsGiusti_png</Name>
+      <Link>Resources\LarsGiusti_png</Link>
+    </Content>
+    <Content Include="AxResource\Litware_LitwareFour_gray">
+      <SubType>Content</SubType>
+      <Name>Litware_LitwareFour_gray</Name>
+      <Link>Resources\Litware_LitwareFour_gray</Link>
+    </Content>
+    <Content Include="AxResource\Litware_McKinley_redwhite">
+      <SubType>Content</SubType>
+      <Name>Litware_McKinley_redwhite</Name>
+      <Link>Resources\Litware_McKinley_redwhite</Link>
+    </Content>
+    <Content Include="AxResource\Litware_Whistler_yellow">
+      <SubType>Content</SubType>
+      <Name>Litware_Whistler_yellow</Name>
+      <Link>Resources\Litware_Whistler_yellow</Link>
+    </Content>
+    <Content Include="AxResource\LukeWalters_png">
+      <SubType>Content</SubType>
+      <Name>LukeWalters_png</Name>
+      <Link>Resources\LukeWalters_png</Link>
+    </Content>
+    <Content Include="AxResource\Nandita">
+      <SubType>Content</SubType>
+      <Name>Nandita</Name>
+      <Link>Resources\Nandita</Link>
+    </Content>
+    <Content Include="AxResource\OfficeAppSampleAppletPage">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleAppletPage</Name>
+      <Link>Resources\OfficeAppSampleAppletPage</Link>
+    </Content>
+    <Content Include="AxResource\OfficeAppSampleAppletScript">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleAppletScript</Name>
+      <Link>Resources\OfficeAppSampleAppletScript</Link>
+    </Content>
+    <Content Include="AxResource\OfficeAppSampleAppletStyle">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleAppletStyle</Name>
+      <Link>Resources\OfficeAppSampleAppletStyle</Link>
+    </Content>
+    <Content Include="AxResource\Proseware_KX_white">
+      <SubType>Content</SubType>
+      <Name>Proseware_KX_white</Name>
+      <Link>Resources\Proseware_KX_white</Link>
+    </Content>
+    <Content Include="AxResource\Refuel">
+      <SubType>Content</SubType>
+      <Name>Refuel</Name>
+      <Link>Resources\Refuel</Link>
+    </Content>
+    <Content Include="AxResource\SatelliteRadio">
+      <SubType>Content</SubType>
+      <Name>SatelliteRadio</Name>
+      <Link>Resources\SatelliteRadio</Link>
+    </Content>
+    <Content Include="AxResource\TireChains">
+      <SubType>Content</SubType>
+      <Name>TireChains</Name>
+      <Link>Resources\TireChains</Link>
+    </Content>
+    <Content Include="AxResource\TonyMadigan_png">
+      <SubType>Content</SubType>
+      <Name>TonyMadigan_png</Name>
+      <Link>Resources\TonyMadigan_png</Link>
+    </Content>
+    <Content Include="AxResource\VehiclePickup">
+      <SubType>Content</SubType>
+      <Name>VehiclePickup</Name>
+      <Link>Resources\VehiclePickup</Link>
+    </Content>
+    <Content Include="AxResource\VinceGray_png">
+      <SubType>Content</SubType>
+      <Name>VinceGray_png</Name>
+      <Link>Resources\VinceGray_png</Link>
+    </Content>
+    <Content Include="AxSecurityDuty\FMBasicDuties">
+      <SubType>Content</SubType>
+      <Name>FMBasicDuties</Name>
+      <Link>Security Duties\FMBasicDuties</Link>
+    </Content>
+    <Content Include="AxSecurityDuty\FMManageCars">
+      <SubType>Content</SubType>
+      <Name>FMManageCars</Name>
+      <Link>Security Duties\FMManageCars</Link>
+    </Content>
+    <Content Include="AxSecurityDuty\FMManageCustomers">
+      <SubType>Content</SubType>
+      <Name>FMManageCustomers</Name>
+      <Link>Security Duties\FMManageCustomers</Link>
+    </Content>
+    <Content Include="AxSecurityDuty\FMRentCars">
+      <SubType>Content</SubType>
+      <Name>FMRentCars</Name>
+      <Link>Security Duties\FMRentCars</Link>
+    </Content>
+    <Content Include="AxSecurityPolicy\FMBURestrict">
+      <SubType>Content</SubType>
+      <Name>FMBURestrict</Name>
+      <Link>Security Policies\FMBURestrict</Link>
+    </Content>
+    <Content Include="AxSecurityPolicy\FMInternalOrganizationsRestrict">
+      <SubType>Content</SubType>
+      <Name>FMInternalOrganizationsRestrict</Name>
+      <Link>Security Policies\FMInternalOrganizationsRestrict</Link>
+    </Content>
+    <Content Include="AxSecurityPolicy\FMSelfServ">
+      <SubType>Content</SubType>
+      <Name>FMSelfServ</Name>
+      <Link>Security Policies\FMSelfServ</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\BIKPI">
+      <SubType>Content</SubType>
+      <Name>BIKPI</Name>
+      <Link>Security Privileges\BIKPI</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMCustomerEntityMaintain">
+      <SubType>Content</SubType>
+      <Name>FMCustomerEntityMaintain</Name>
+      <Link>Security Privileges\FMCustomerEntityMaintain</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMCustomerEntityView">
+      <SubType>Content</SubType>
+      <Name>FMCustomerEntityView</Name>
+      <Link>Security Privileges\FMCustomerEntityView</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMEditCustomerRecords">
+      <SubType>Content</SubType>
+      <Name>FMEditCustomerRecords</Name>
+      <Link>Security Privileges\FMEditCustomerRecords</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMManageCustomers">
+      <SubType>Content</SubType>
+      <Name>FMManageCustomers</Name>
+      <Link>Security Privileges\FMManageCustomers</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMManageInventory">
+      <SubType>Content</SubType>
+      <Name>FMManageInventory</Name>
+      <Link>Security Privileges\FMManageInventory</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMRentalEntityMaintain">
+      <SubType>Content</SubType>
+      <Name>FMRentalEntityMaintain</Name>
+      <Link>Security Privileges\FMRentalEntityMaintain</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMRentalEntityView">
+      <SubType>Content</SubType>
+      <Name>FMRentalEntityView</Name>
+      <Link>Security Privileges\FMRentalEntityView</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMRentCars">
+      <SubType>Content</SubType>
+      <Name>FMRentCars</Name>
+      <Link>Security Privileges\FMRentCars</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMUseWorkflow">
+      <SubType>Content</SubType>
+      <Name>FMUseWorkflow</Name>
+      <Link>Security Privileges\FMUseWorkflow</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMViewCustomerRecords">
+      <SubType>Content</SubType>
+      <Name>FMViewCustomerRecords</Name>
+      <Link>Security Privileges\FMViewCustomerRecords</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMViewInventory">
+      <SubType>Content</SubType>
+      <Name>FMViewInventory</Name>
+      <Link>Security Privileges\FMViewInventory</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMWorkflowClerk">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowClerk</Name>
+      <Link>Security Privileges\FMWorkflowClerk</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMWorkflowManager">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowManager</Name>
+      <Link>Security Privileges\FMWorkflowManager</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\FMWorkflowServiceTech">
+      <SubType>Content</SubType>
+      <Name>FMWorkflowServiceTech</Name>
+      <Link>Security Privileges\FMWorkflowServiceTech</Link>
+    </Content>
+    <Content Include="AxSecurityRole\FMClerk">
+      <SubType>Content</SubType>
+      <Name>FMClerk</Name>
+      <Link>Security Roles\FMClerk</Link>
+    </Content>
+    <Content Include="AxSecurityRole\FMManager">
+      <SubType>Content</SubType>
+      <Name>FMManager</Name>
+      <Link>Security Roles\FMManager</Link>
+    </Content>
+    <Content Include="AxSecurityRole\FMServiceTech">
+      <SubType>Content</SubType>
+      <Name>FMServiceTech</Name>
+      <Link>Security Roles\FMServiceTech</Link>
+    </Content>
+    <Content Include="AxServiceGroup\FMVehicleInventoryServiceGroup">
+      <SubType>Content</SubType>
+      <Name>FMVehicleInventoryServiceGroup</Name>
+      <Link>Service Groups\FMVehicleInventoryServiceGroup</Link>
+    </Content>
+    <Content Include="AxService\FMVehicleInventoryService">
+      <SubType>Content</SubType>
+      <Name>FMVehicleInventoryService</Name>
+      <Link>Services\FMVehicleInventoryService</Link>
+    </Content>
+    <Content Include="AxTable\FMAddressTable">
+      <SubType>Content</SubType>
+      <Name>FMAddressTable</Name>
+      <Link>Tables\FMAddressTable</Link>
+    </Content>
+    <Content Include="AxTable\FMCarClass">
+      <SubType>Content</SubType>
+      <Name>FMCarClass</Name>
+      <Link>Tables\FMCarClass</Link>
+    </Content>
+    <Content Include="AxTable\FMCarColor">
+      <SubType>Content</SubType>
+      <Name>FMCarColor</Name>
+      <Link>Tables\FMCarColor</Link>
+    </Content>
+    <Content Include="AxTable\FMChargeType">
+      <SubType>Content</SubType>
+      <Name>FMChargeType</Name>
+      <Link>Tables\FMChargeType</Link>
+    </Content>
+    <Content Include="AxTable\FMComments">
+      <SubType>Content</SubType>
+      <Name>FMComments</Name>
+      <Link>Tables\FMComments</Link>
+    </Content>
+    <Content Include="AxTable\FMCustGroup">
+      <SubType>Content</SubType>
+      <Name>FMCustGroup</Name>
+      <Link>Tables\FMCustGroup</Link>
+    </Content>
+    <Content Include="AxTable\FMCustomer">
+      <SubType>Content</SubType>
+      <Name>FMCustomer</Name>
+      <Link>Tables\FMCustomer</Link>
+    </Content>
+    <Content Include="AxTable\FMCustomerComments">
+      <SubType>Content</SubType>
+      <Name>FMCustomerComments</Name>
+      <Link>Tables\FMCustomerComments</Link>
+    </Content>
+    <Content Include="AxTable\FMCustomerRentalsByColorTmp">
+      <SubType>Content</SubType>
+      <Name>FMCustomerRentalsByColorTmp</Name>
+      <Link>Tables\FMCustomerRentalsByColorTmp</Link>
+    </Content>
+    <Content Include="AxTable\FMCustomerRentalsByModelTmp">
+      <SubType>Content</SubType>
+      <Name>FMCustomerRentalsByModelTmp</Name>
+      <Link>Tables\FMCustomerRentalsByModelTmp</Link>
+    </Content>
+    <Content Include="AxTable\FMCustomerStaging">
+      <SubType>Content</SubType>
+      <Name>FMCustomerStaging</Name>
+      <Link>Tables\FMCustomerStaging</Link>
+    </Content>
+    <Content Include="AxTable\FMModelRate">
+      <SubType>Content</SubType>
+      <Name>FMModelRate</Name>
+      <Link>Tables\FMModelRate</Link>
+    </Content>
+    <Content Include="AxTable\FMParameters">
+      <SubType>Content</SubType>
+      <Name>FMParameters</Name>
+      <Link>Tables\FMParameters</Link>
+    </Content>
+    <Content Include="AxTable\FMPaymentInformation">
+      <SubType>Content</SubType>
+      <Name>FMPaymentInformation</Name>
+      <Link>Tables\FMPaymentInformation</Link>
+    </Content>
+    <Content Include="AxTable\FMPickupAndReturnTable">
+      <SubType>Content</SubType>
+      <Name>FMPickupAndReturnTable</Name>
+      <Link>Tables\FMPickupAndReturnTable</Link>
+    </Content>
+    <Content Include="AxTable\FMRental">
+      <SubType>Content</SubType>
+      <Name>FMRental</Name>
+      <Link>Tables\FMRental</Link>
+    </Content>
+    <Content Include="AxTable\FMRentalCharge">
+      <SubType>Content</SubType>
+      <Name>FMRentalCharge</Name>
+      <Link>Tables\FMRentalCharge</Link>
+    </Content>
+    <Content Include="AxTable\FMRentalStaging">
+      <SubType>Content</SubType>
+      <Name>FMRentalStaging</Name>
+      <Link>Tables\FMRentalStaging</Link>
+    </Content>
+    <Content Include="AxTable\FMSUV">
+      <SubType>Content</SubType>
+      <Name>FMSUV</Name>
+      <Link>Tables\FMSUV</Link>
+    </Content>
+    <Content Include="AxTable\FMSUVSafetyRating">
+      <SubType>Content</SubType>
+      <Name>FMSUVSafetyRating</Name>
+      <Link>Tables\FMSUVSafetyRating</Link>
+    </Content>
+    <Content Include="AxTable\FMTruck">
+      <SubType>Content</SubType>
+      <Name>FMTruck</Name>
+      <Link>Tables\FMTruck</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicle">
+      <SubType>Content</SubType>
+      <Name>FMVehicle</Name>
+      <Link>Tables\FMVehicle</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicleAvailabilityByModelTmp">
+      <SubType>Content</SubType>
+      <Name>FMVehicleAvailabilityByModelTmp</Name>
+      <Link>Tables\FMVehicleAvailabilityByModelTmp</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicleMaintenance">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenance</Name>
+      <Link>Tables\FMVehicleMaintenance</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicleMake">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMake</Name>
+      <Link>Tables\FMVehicleMake</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicleModel">
+      <SubType>Content</SubType>
+      <Name>FMVehicleModel</Name>
+      <Link>Tables\FMVehicleModel</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicleRate">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRate</Name>
+      <Link>Tables\FMVehicleRate</Link>
+    </Content>
+    <Content Include="AxTable\FMVehicleRentalStatusByAvailTmp">
+      <SubType>Content</SubType>
+      <Name>FMVehicleRentalStatusByAvailTmp</Name>
+      <Link>Tables\FMVehicleRentalStatusByAvailTmp</Link>
+    </Content>
+    <Content Include="AxTable\FMWorker">
+      <SubType>Content</SubType>
+      <Name>FMWorker</Name>
+      <Link>Tables\FMWorker</Link>
+    </Content>
+    <Content Include="AxTable\MyInternalOrganizationsForRole">
+      <SubType>Content</SubType>
+      <Name>MyInternalOrganizationsForRole</Name>
+      <Link>Tables\MyInternalOrganizationsForRole</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrCustRentalsByColor">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrCustRentalsByColor</Name>
+      <Link>Tables\TmpBIFMAgrCustRentalsByColor</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrRentalRevenuebyCustomer">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrRentalRevenuebyCustomer</Name>
+      <Link>Tables\TmpBIFMAgrRentalRevenuebyCustomer</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrRentalsbyRelationType">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrRentalsbyRelationType</Name>
+      <Link>Tables\TmpBIFMAgrRentalsbyRelationType</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrRevenuebyMonth">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrRevenuebyMonth</Name>
+      <Link>Tables\TmpBIFMAgrRevenuebyMonth</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehicleAnnualRevenue">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehicleAnnualRevenue</Name>
+      <Link>Tables\TmpBIFMAgrVehicleAnnualRevenue</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehiclesbyModel">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehiclesbyModel</Name>
+      <Link>Tables\TmpBIFMAgrVehiclesbyModel</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehiclesbyModelbyStatus">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehiclesbyModelbyStatus</Name>
+      <Link>Tables\TmpBIFMAgrVehiclesbyModelbyStatus</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehiclesByStatusAvail">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehiclesByStatusAvail</Name>
+      <Link>Tables\TmpBIFMAgrVehiclesByStatusAvail</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehiclesByStatusInSvc">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehiclesByStatusInSvc</Name>
+      <Link>Tables\TmpBIFMAgrVehiclesByStatusInSvc</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehiclesByStatusRented">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehiclesByStatusRented</Name>
+      <Link>Tables\TmpBIFMAgrVehiclesByStatusRented</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMAgrVehiclesStatusByType">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMAgrVehiclesStatusByType</Name>
+      <Link>Tables\TmpBIFMAgrVehiclesStatusByType</Link>
+    </Content>
+    <Content Include="AxTable\TmpBIFMRentalsbyModel">
+      <SubType>Content</SubType>
+      <Name>TmpBIFMRentalsbyModel</Name>
+      <Link>Tables\TmpBIFMRentalsbyModel</Link>
+    </Content>
+    <Content Include="AxTable\TmpChartReportingData">
+      <SubType>Content</SubType>
+      <Name>TmpChartReportingData</Name>
+      <Link>Tables\TmpChartReportingData</Link>
+    </Content>
+    <Content Include="AxTable\TmpFMRentalsByCust">
+      <SubType>Content</SubType>
+      <Name>TmpFMRentalsByCust</Name>
+      <Link>Tables\TmpFMRentalsByCust</Link>
+    </Content>
+    <Content Include="AxTile\FMAllCustomersLargeTile">
+      <SubType>Content</SubType>
+      <Name>FMAllCustomersLargeTile</Name>
+      <Link>Tiles\FMAllCustomersLargeTile</Link>
+    </Content>
+    <Content Include="AxTile\FMAllCustomersTile">
+      <SubType>Content</SubType>
+      <Name>FMAllCustomersTile</Name>
+      <Link>Tiles\FMAllCustomersTile</Link>
+    </Content>
+    <Content Include="AxTile\FMAllRentalsShortWideTile">
+      <SubType>Content</SubType>
+      <Name>FMAllRentalsShortWideTile</Name>
+      <Link>Tiles\FMAllRentalsShortWideTile</Link>
+    </Content>
+    <Content Include="AxTile\FMAllRentalsTile">
+      <SubType>Content</SubType>
+      <Name>FMAllRentalsTile</Name>
+      <Link>Tiles\FMAllRentalsTile</Link>
+    </Content>
+    <Content Include="AxTile\FMClerkWorkspace">
+      <SubType>Content</SubType>
+      <Name>FMClerkWorkspace</Name>
+      <Link>Tiles\FMClerkWorkspace</Link>
+    </Content>
+    <Content Include="AxTile\FmCurrentRentalsShortWideTile">
+      <SubType>Content</SubType>
+      <Name>FmCurrentRentalsShortWideTile</Name>
+      <Link>Tiles\FmCurrentRentalsShortWideTile</Link>
+    </Content>
+    <Content Include="AxTile\FmCurrentRentalsTile">
+      <SubType>Content</SubType>
+      <Name>FmCurrentRentalsTile</Name>
+      <Link>Tiles\FmCurrentRentalsTile</Link>
+    </Content>
+    <Content Include="AxTile\FMCustomersReportTile">
+      <SubType>Content</SubType>
+      <Name>FMCustomersReportTile</Name>
+      <Link>Tiles\FMCustomersReportTile</Link>
+    </Content>
+    <Content Include="AxTile\FMNewRentalTile">
+      <SubType>Content</SubType>
+      <Name>FMNewRentalTile</Name>
+      <Link>Tiles\FMNewRentalTile</Link>
+    </Content>
+    <Content Include="AxTile\FMOverdueReturnsShortWideTile">
+      <SubType>Content</SubType>
+      <Name>FMOverdueReturnsShortWideTile</Name>
+      <Link>Tiles\FMOverdueReturnsShortWideTile</Link>
+    </Content>
+    <Content Include="AxTile\FMOverdueReturnsTile">
+      <SubType>Content</SubType>
+      <Name>FMOverdueReturnsTile</Name>
+      <Link>Tiles\FMOverdueReturnsTile</Link>
+    </Content>
+    <Content Include="AxTile\FMRentalsByCustReportTile">
+      <SubType>Content</SubType>
+      <Name>FMRentalsByCustReportTile</Name>
+      <Link>Tiles\FMRentalsByCustReportTile</Link>
+    </Content>
+    <Content Include="AxTile\FMRevenueKPITile">
+      <SubType>Content</SubType>
+      <Name>FMRevenueKPITile</Name>
+      <Link>Tiles\FMRevenueKPITile</Link>
+    </Content>
+    <Content Include="AxTile\FMSetup">
+      <SubType>Content</SubType>
+      <Name>FMSetup</Name>
+      <Link>Tiles\FMSetup</Link>
+    </Content>
+    <Content Include="AxTile\FMVehicleTile">
+      <SubType>Content</SubType>
+      <Name>FMVehicleTile</Name>
+      <Link>Tiles\FMVehicleTile</Link>
+    </Content>
+    <Content Include="AxView\Address">
+      <SubType>Content</SubType>
+      <Name>Address</Name>
+      <Link>Views\Address</Link>
+    </Content>
+    <Content Include="AxView\CarColor">
+      <SubType>Content</SubType>
+      <Name>CarColor</Name>
+      <Link>Views\CarColor</Link>
+    </Content>
+    <Content Include="AxView\Comments">
+      <SubType>Content</SubType>
+      <Name>Comments</Name>
+      <Link>Views\Comments</Link>
+    </Content>
+    <Content Include="AxView\Customer">
+      <SubType>Content</SubType>
+      <Name>Customer</Name>
+      <Link>Views\Customer</Link>
+    </Content>
+    <Content Include="AxView\DimAttributeOMBranch">
+      <SubType>Content</SubType>
+      <Name>DimAttributeOMBranch</Name>
+      <Link>Views\DimAttributeOMBranch</Link>
+    </Content>
+    <Content Include="AxView\DimAttributeOMRegion">
+      <SubType>Content</SubType>
+      <Name>DimAttributeOMRegion</Name>
+      <Link>Views\DimAttributeOMRegion</Link>
+    </Content>
+    <Content Include="AxView\DimAttributeOMRentalLocation">
+      <SubType>Content</SubType>
+      <Name>DimAttributeOMRentalLocation</Name>
+      <Link>Views\DimAttributeOMRentalLocation</Link>
+    </Content>
+    <Content Include="AxView\FMCustomerExtendedView">
+      <SubType>Content</SubType>
+      <Name>FMCustomerExtendedView</Name>
+      <Link>Views\FMCustomerExtendedView</Link>
+    </Content>
+    <Content Include="AxView\FMRentalChargeExtendedView">
+      <SubType>Content</SubType>
+      <Name>FMRentalChargeExtendedView</Name>
+      <Link>Views\FMRentalChargeExtendedView</Link>
+    </Content>
+    <Content Include="AxView\FMRentalCustomerView">
+      <SubType>Content</SubType>
+      <Name>FMRentalCustomerView</Name>
+      <Link>Views\FMRentalCustomerView</Link>
+    </Content>
+    <Content Include="AxView\FMVehicleExtendedView">
+      <SubType>Content</SubType>
+      <Name>FMVehicleExtendedView</Name>
+      <Link>Views\FMVehicleExtendedView</Link>
+    </Content>
+    <Content Include="AxView\MakeModel">
+      <SubType>Content</SubType>
+      <Name>MakeModel</Name>
+      <Link>Views\MakeModel</Link>
+    </Content>
+    <Content Include="AxView\ModelRate">
+      <SubType>Content</SubType>
+      <Name>ModelRate</Name>
+      <Link>Views\ModelRate</Link>
+    </Content>
+    <Content Include="AxView\PaymentInformation">
+      <SubType>Content</SubType>
+      <Name>PaymentInformation</Name>
+      <Link>Views\PaymentInformation</Link>
+    </Content>
+    <Content Include="AxView\Reservation">
+      <SubType>Content</SubType>
+      <Name>Reservation</Name>
+      <Link>Views\Reservation</Link>
+    </Content>
+    <Content Include="AxView\Vehicle">
+      <SubType>Content</SubType>
+      <Name>Vehicle</Name>
+      <Link>Views\Vehicle</Link>
+    </Content>
+    <Content Include="AxWorkflowApproval\FMServiceApproval">
+      <SubType>Content</SubType>
+      <Name>FMServiceApproval</Name>
+      <Link>Workflow Approvals\FMServiceApproval</Link>
+    </Content>
+    <Content Include="AxWorkflowAutomatedTask\FMRecordMIleage">
+      <SubType>Content</SubType>
+      <Name>FMRecordMIleage</Name>
+      <Link>Workflow Automated Tasks\FMRecordMIleage</Link>
+    </Content>
+    <Content Include="AxWorkflowCategory\FMCategory">
+      <SubType>Content</SubType>
+      <Name>FMCategory</Name>
+      <Link>Workflow Categories\FMCategory</Link>
+    </Content>
+    <Content Include="AxWorkflowTask\FMCleanVehicle">
+      <SubType>Content</SubType>
+      <Name>FMCleanVehicle</Name>
+      <Link>Workflow Tasks\FMCleanVehicle</Link>
+    </Content>
+    <Content Include="AxWorkflowTask\FMExamineVehicle">
+      <SubType>Content</SubType>
+      <Name>FMExamineVehicle</Name>
+      <Link>Workflow Tasks\FMExamineVehicle</Link>
+    </Content>
+    <Content Include="AxWorkflowTask\FMServiceVehicle">
+      <SubType>Content</SubType>
+      <Name>FMServiceVehicle</Name>
+      <Link>Workflow Tasks\FMServiceVehicle</Link>
+    </Content>
+    <Content Include="AxWorkflowTemplate\FMVehicleMaintenanceWorkflowType">
+      <SubType>Content</SubType>
+      <Name>FMVehicleMaintenanceWorkflowType</Name>
+      <Link>Workflow Types\FMVehicleMaintenanceWorkflowType</Link>
+    </Content>
+    <Content Include="CarbonFee.png">
+      <SubType>Content</SubType>
+      <Name>CarbonFee.png</Name>
+      <DependentUpon>AxResource\CarbonFee</DependentUpon>
+    </Content>
+    <Content Include="ChildSeat.png">
+      <SubType>Content</SubType>
+      <Name>ChildSeat.png</Name>
+      <DependentUpon>AxResource\ChildSeat</DependentUpon>
+    </Content>
+    <Content Include="DriversLicense.png">
+      <SubType>Content</SubType>
+      <Name>DriversLicense.png</Name>
+      <DependentUpon>AxResource\DriversLicense_png</DependentUpon>
+    </Content>
+    <Content Include="FleetSecurityDuties.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>FleetSecurityDuties.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\FleetSecurityDuties_en-US</DependentUpon>
+    </Content>
+    <Content Include="FLM.en-us.label.txt">
+      <SubType>Content</SubType>
+      <Name>FLM.en-us.label.txt</Name>
+      <DependentUpon>AxLabelFile\FLM_en-US</DependentUpon>
+    </Content>
+    <Content Include="FMCustomers.jpg">
+      <SubType>Content</SubType>
+      <Name>FMCustomers.jpg</Name>
+      <DependentUpon>AxResource\FMCustomers</DependentUpon>
+    </Content>
+    <Content Include="FMTemplateCustomerInformation.docx">
+      <SubType>Content</SubType>
+      <Name>FMTemplateCustomerInformation.docx</Name>
+      <DependentUpon>AxResource\FMTemplateCustomerInformation</DependentUpon>
+    </Content>
+    <Content Include="GPS.png">
+      <SubType>Content</SubType>
+      <Name>GPS.png</Name>
+      <DependentUpon>AxResource\GPS</DependentUpon>
+    </Content>
+    <Content Include="johnkytethumbnail.png">
+      <SubType>Content</SubType>
+      <Name>johnkytethumbnail.png</Name>
+      <DependentUpon>AxResource\JohnKyte_png</DependentUpon>
+    </Content>
+    <Content Include="JohnRamirez.png">
+      <SubType>Content</SubType>
+      <Name>JohnRamirez.png</Name>
+      <DependentUpon>AxResource\JohnRamirez_png</DependentUpon>
+    </Content>
+    <Content Include="LarsGiusti.png">
+      <SubType>Content</SubType>
+      <Name>LarsGiusti.png</Name>
+      <DependentUpon>AxResource\LarsGiusti_png</DependentUpon>
+    </Content>
+    <Content Include="Litware_LitwareFour_gray.png">
+      <SubType>Content</SubType>
+      <Name>Litware_LitwareFour_gray.png</Name>
+      <DependentUpon>AxResource\Litware_LitwareFour_gray</DependentUpon>
+    </Content>
+    <Content Include="Litware_McKinley_redwhite.png">
+      <SubType>Content</SubType>
+      <Name>Litware_McKinley_redwhite.png</Name>
+      <DependentUpon>AxResource\Litware_McKinley_redwhite</DependentUpon>
+    </Content>
+    <Content Include="Litware_Whistler_yellow.png">
+      <SubType>Content</SubType>
+      <Name>Litware_Whistler_yellow.png</Name>
+      <DependentUpon>AxResource\Litware_Whistler_yellow</DependentUpon>
+    </Content>
+    <Content Include="LukeWalters.png">
+      <SubType>Content</SubType>
+      <Name>LukeWalters.png</Name>
+      <DependentUpon>AxResource\LukeWalters_png</DependentUpon>
+    </Content>
+    <Content Include="nanditabig.png">
+      <SubType>Content</SubType>
+      <Name>nanditabig.png</Name>
+      <DependentUpon>AxResource\Nandita</DependentUpon>
+    </Content>
+    <Content Include="OfficeAppSampleApplet.css">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleApplet.css</Name>
+      <DependentUpon>AxResource\OfficeAppSampleAppletStyle</DependentUpon>
+    </Content>
+    <Content Include="OfficeAppSampleApplet.html">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleApplet.html</Name>
+      <DependentUpon>AxResource\OfficeAppSampleAppletPage</DependentUpon>
+    </Content>
+    <Content Include="OfficeAppSampleApplet.js">
+      <SubType>Content</SubType>
+      <Name>OfficeAppSampleApplet.js</Name>
+      <DependentUpon>AxResource\OfficeAppSampleAppletScript</DependentUpon>
+    </Content>
+    <Content Include="Proseware_KX_white.png">
+      <SubType>Content</SubType>
+      <Name>Proseware_KX_white.png</Name>
+      <DependentUpon>AxResource\Proseware_KX_white</DependentUpon>
+    </Content>
+    <Content Include="Refuel.png">
+      <SubType>Content</SubType>
+      <Name>Refuel.png</Name>
+      <DependentUpon>AxResource\Refuel</DependentUpon>
+    </Content>
+    <Content Include="SatelliteRadio.png">
+      <SubType>Content</SubType>
+      <Name>SatelliteRadio.png</Name>
+      <DependentUpon>AxResource\SatelliteRadio</DependentUpon>
+    </Content>
+    <Content Include="TireChains.png">
+      <SubType>Content</SubType>
+      <Name>TireChains.png</Name>
+      <DependentUpon>AxResource\TireChains</DependentUpon>
+    </Content>
+    <Content Include="TonyMadigan.png">
+      <SubType>Content</SubType>
+      <Name>TonyMadigan.png</Name>
+      <DependentUpon>AxResource\TonyMadigan_png</DependentUpon>
+    </Content>
+    <Content Include="VehiclePickup.png">
+      <SubType>Content</SubType>
+      <Name>VehiclePickup.png</Name>
+      <DependentUpon>AxResource\VehiclePickup</DependentUpon>
+    </Content>
+    <Content Include="VinceGray.png">
+      <SubType>Content</SubType>
+      <Name>VinceGray.png</Name>
+      <DependentUpon>AxResource\VinceGray_png</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Dynamics.Application.Instrumentation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.Dynamics.Application.Instrumentation</Name>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Dynamics\AX\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

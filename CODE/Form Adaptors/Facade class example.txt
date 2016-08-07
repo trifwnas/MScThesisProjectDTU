@@ -1,0 +1,62 @@
+/// <summary>
+/// The <c>WHSMobileDevicesServiceFacade</c> class is used to handle service between AX and WMDP.
+/// </summary>
+public class WHSMobileDevicesServiceFacade
+{
+	/// <summary>
+	/// Gets next form state xml from current state.
+	/// </summary>
+	/// <param name="_xml">
+	/// Current state xml.
+	/// </param>
+	/// <returns>
+	/// Next form state xml.
+	/// </returns>
+    [SysEntryPointAttribute()]
+    public XML getNextFormHandHeld(XML _xml, DataAreaId _dataAreaId)
+    {
+        XML result;
+
+        changecompany(_dataAreaId)
+        {
+            result = WHSWorkExecuteDisplay::getNextFormHandHeld(_xml);
+        }
+
+        return result;
+    }
+
+
+    [SysEntryPointAttribute()]
+    public LanguageId getDefaultLanguage()
+    {
+        return TMSCommProxy::language();
+    }
+
+	/// <summary>
+	/// Generates work user display settings xml.
+	/// </summary>
+	/// <returns>
+	/// The work user display settings xml.
+	/// </returns>
+    [SysEntryPointAttribute()]
+    public XML workUserDisplaySettings(DataAreaId _dataAreaId)
+    {
+        XML result;
+
+        changecompany(_dataAreaId)
+        {
+            result = WHSWorkExecuteDisplay::generateWorkUserDisplaySettingsXML();
+        }
+
+        return result;
+    }
+
+
+    [SysEntryPointAttribute(),
+    AifCollectionTypeAttribute('return', Types::String)]
+    public List getCompanies()
+    {
+        return xDataAreaHelper::getNonVirtualDataAreaIDs();
+    }
+
+}

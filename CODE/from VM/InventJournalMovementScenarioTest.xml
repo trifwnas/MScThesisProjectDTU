@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>InventJournalMovementScenarioTest</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+[SysTestGranularityAttribute(SysTestGranularity::Integration)]
+[SysTestCaseDataDependency('USMF')]
+[SysTestSecurityAttribute('John', [roleStr(WMSWarehouseWorker), roleStr(WMSWarehouseManager), roleStr(TestEssentialsRole)], true)]
+public final class InventJournalMovementScenarioTest extends InventTestCase
+{
+    const JournalNameId             JournalNameId = 'IMov';
+    const ItemId                    ItemId = 'D0001';
+    const LedgerAccount             OffsetAccount = '110110';
+    date                            transDate = DateTimeUtil::getToday(DateTimeUtil::getUserPreferredTimeZone());
+
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>checkJournal</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Test that the new journal with one line can be successfully posted.
+    /// </summary>
+    [SysTestMethodAttribute, SysTestCheckinTest]
+    public void checkJournal()
+    {
+        JournalId journalId;
+
+        // Arrange
+
+        ttsbegin;
+
+        data.ledger().fiscalCalendars().ensureFiscalCalendar(transDate);
+
+        ttscommit;
+
+        using(InventJournalMovementFormAdaptor journalForm = InventJournalMovementFormAdaptor::openInventJournalTransMovement())
+        {
+            journalId = this.createJournal(journalForm);
+
+            this.addLine(journalForm);
+            
+            this.postJournal(journalForm);
+        }
+
+        // Assert
+        InventJournalTable journalTable;
+        select firstonly  journalTable
+            where journalTable.JournalId == journalId;
+        this.assertEquals(NoYes::Yes, journalTable.Posted, 'Journal must be posted');
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>createJournal</Name>
+				<Source><![CDATA[
+    private JournalId createJournal(InventJournalMovementFormAdaptor _journalForm)
+    {
+        _journalForm.create();
+
+        using(InventJournalCreateFormAdaptor createForm = InventJournalCreateFormAdaptor::attach())
+        {
+            createForm.InventJournalTable_JournalNameId().SetValue(JournalNameId);
+            var journalId = createForm.InventJournalTable_JournalId().GetValue();
+            createForm.Ok().Click();
+
+            return journalId;
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>addLine</Name>
+				<Source><![CDATA[
+    private void addLine(InventJournalMovementFormAdaptor _journalForm)
+    {
+        _journalForm.NewLine().Click();
+        _journalForm.TransDate().setValue(transDate);
+        _journalForm.InventJournalTrans_ItemId().SetValue(ItemId);
+        _journalForm.InventJournalTrans_OffsetAccount().SetValue(OffsetAccount);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>postJournal</Name>
+				<Source><![CDATA[
+    private void postJournal(InventJournalMovementFormAdaptor _journalForm)
+    {
+        _journalForm.postJournal().Click();
+
+        using(DialogFormAdaptor dialog = DialogFormAdaptor::attach())
+        {
+            dialog.OkButton().Click();
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>lookupNonStocked_WarehouseManagementCounting_NotIncluded</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Validate non-stocked item cannot be added to inventory movement journal during warehouse management counting.
+    /// </summary>
+    [SysTestMethod, SysTestGranularity(SysTestGranularity::Component), SysTestCheckinTest]
+    public void lookupNonStocked_WarehouseManagementCounting_NotIncluded()
+    {
+        ttsbegin;
+        
+        //========Given========
+
+        var movementJournal = data.invent().movementJournals().createDefault();
+        var nonStockedItem = items.defaultBuilder().setItemModelGroup(data.invent().modelGroups().nonStocked()).create();
+
+        ttscommit;
+
+        //========When========
+
+        using (var wmCounting = InventJournalMovementFormAdaptor::openInventJournalTableMovement(movementJournal.record()))
+        {
+            wmCounting.NewLine().click();
+
+            wmCounting.InventJournalTrans_ItemId().openLookup();
+
+            using (var lookupForm = InventItemIdLookupSimpleFormAdaptor::attach())
+            {
+                //========Then========
+
+                this.assertTrue(lookupForm.Grid().count() > 0, 'No item in lookup form');
+
+                //========When========
+
+                lookupForm.InventTable_ItemId().filter(nonStockedItem.ItemId);
+
+                //========Then========
+
+                lookupForm.Grid().validateCount(0);
+            }
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>filterJournalListToEmpty_JournalExistsAndIsSelected_CannotCreateDeleteLines</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Given a movement journal is selected in the journal list
+    /// When the journal list is filtered to show no results
+    /// Then journal lines cannot be created or deleted
+    /// </summary>
+    [SysTestMethod, SysTestGranularity(SysTestGranularity::Component)]
+    public void filterJournalListToEmpty_JournalExistsAndIsSelected_CannotCreateDeleteLines()
+    {
+        //======== Given ========
+        AtlEntityInventMovementJournal movementJournal = data.invent().movementJournals().createDefault();
+        using (var journalForm = InventJournalMovementFormAdaptor::openInventJournalTableMovement(movementJournal.record()))
+        {
+            //======== When ========
+            journalForm.ctrlGridJournalId1().filter('NotExistantJournalId');
+
+            //======== Then ========
+            journalForm.NewLine().validateEnabled(false);
+            journalForm.RemoveLine().validateEnabled(false);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>refresh_ManuallyAddedDeletedLines_NumberOfLinesIsCorrect</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Verifies that the number of journal lines is correctly displayed when lines are manually added and deleted.
+    /// </summary>
+    [SysTestMethod, SysTestGranularity(SysTestGranularity::Component)]
+    public void refresh_ManuallyAddedDeletedLines_NumberOfLinesIsCorrect()
+    {
+        //========Given========
+        ttsbegin;
+        AtlEntityInventMovementJournal movementJournal = data.invent().movementJournals().createDefault();
+        ttscommit;
+
+        using (var movementJournalForm = InventJournalMovementFormAdaptor::openInventJournalTableMovement(movementJournal.record()))
+        {
+            this.addLine(movementJournalForm);
+            this.addLine(movementJournalForm);
+            movementJournalForm.save();
+
+            //========When========
+            movementJournalForm.refresh();
+
+            //========Then========
+            movementJournalForm.InventJournalTable_NumOfLines().validate(2);
+
+            //========And When========
+            this.deleteCurrentLine(movementJournalForm);
+            movementJournalForm.refresh();
+
+            //========Then========
+            movementJournalForm.InventJournalTable_NumOfLines().validate(1);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>deleteCurrentLine</Name>
+				<Source><![CDATA[
+    private void deleteCurrentLine(InventJournalMovementFormAdaptor _journalForm)
+    {
+        _journalForm.RemoveLine().click();
+        SysBoxFormFormAdaptor_Extension::attachAndClick(SysBoxFormFormAdaptorButton::Yes);
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>createJournalLineWithWhsItem_MovementJournalHeaderCreated_InventoryStatusIsShown</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Verify that inventory status value is shown when creating journal lines.
+    /// </summary>
+    [SysTestMethod, SysTestGranularity(SysTestGranularity::Component)]
+    public void createJournalLineWithWhsItem_MovementJournalHeaderCreated_InventoryStatusIsShown()
+    {
+        //========Given========
+
+        ttsbegin;
+
+        WHSInventStatus inventoryStatus = data.whs().inventStatuses().available();
+        
+        InventLocation whsWarehouse = invent.warehouses().whs();
+        whsWarehouse.DefaultStatusId = inventoryStatus.InventStatusId;
+        whsWarehouse.update();
+
+        AtlEntityInventMovementJournal movementJournal = invent.movementJournals().createDefault();
+        
+        ttscommit;
+
+        //========When========
+
+        using (var journalForm = InventJournalMovementFormAdaptor::openInventJournalTransMovement(movementJournal.record()))
+        {
+            journalForm.NewLine().Click();
+            journalForm.InventJournalTrans_ItemId().SetValue(items.whs().ItemId);
+            journalForm.InventoryDimensionsGrid_InventLocationId().setValue(whsWarehouse.InventLocationId);
+            journalForm.save();
+
+            journalForm.InventDimParmFixed().click();
+            InventDimParmFixedFormAdaptorHelper::displayInventoryStatusField();
+            
+            //========Then========
+
+            journalForm.InventoryDimensionsGrid_InventStatusId().validate(inventoryStatus.InventStatusId);
+        }
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>updateLocationInventoryDim_MovementJournalExisted_CostPriceAndCostAmountNotChange</Name>
+				<Source><![CDATA[
+    /// <summary>
+    /// Verify that cost price and cost amount not update when updating Location inventory dimension.
+    /// </summary>
+    [SysTestMethod, SysTestGranularity(SysTestGranularity::Component)]
+    public void updateLocationInventoryDim_MovementJournalExisted_CostPriceAndCostAmountNotChange()
+    {
+        const CostPrice  CostPrice = 1;
+        const SalesQty   Qty = 100;
+
+        ttsbegin;
+
+        //===========Given===========
+
+        InventLocation localWarehouse = invent.warehouses().default();
+        WMSLocation localLocation = invent.locations(localWarehouse).bulk();
+        InventTable localItem = items.wmsBuilder().create();
+
+        ttscommit;
+
+        using (var inventJournalMovementForm = InventJournalMovementFormAdaptor::openInventJournalTransMovement())
+        {
+            inventJournalMovementForm.gridOverviewDetails().create();
+
+            using (var inventJournalCreateForm = InventJournalCreateFormAdaptor::attach())
+            {
+                inventJournalCreateForm.InventJournalTable_JournalNameId().setValue(JournalNameId);
+                inventJournalCreateForm.Ok().click();
+            }
+
+            inventJournalMovementForm.NewLine().click();
+            inventJournalMovementForm.InventJournalTrans_ItemId().setValue(localItem.ItemId);
+
+            inventJournalMovementForm.Qty().setValue(Qty);
+
+            // [@SYS84753 = Field "%1" must be filled in.]
+            // [@SYS122446 = Site]
+            MessageCenterAdaptor::clear();
+
+            inventJournalMovementForm.InventoryDimensionsGrid_InventLocationId().setValue(localWarehouse.InventLocationId);
+            inventJournalMovementForm.CostPrice().setValue(CostPrice);
+
+            //==========When===========
+
+            inventJournalMovementForm.InventoryDimensionsGrid_wMSLocationId().setValue(localLocation.wMSLocationId);
+
+            //==========Then===========
+
+            inventJournalMovementForm.CostPrice().validate(CostPrice);
+            inventJournalMovementForm.CostAmount().validate(CostPrice * Qty);
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

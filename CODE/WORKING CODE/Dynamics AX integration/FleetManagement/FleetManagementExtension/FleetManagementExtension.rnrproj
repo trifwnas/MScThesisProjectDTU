@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <Model>FleetManagementExtension</Model>
+    <DBSyncInBuild>False</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{060febe9-f987-4889-8832-ccbc09ae2d79}</ProjectGuid>
+    <Name>FleetManagementExtension</Name>
+    <RootNamespace>FleetManagementExtension</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Action Menu Items\" />
+    <Folder Include="AxReference\" />
+    <Folder Include="Base Enums\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Display Menu Items\" />
+    <Folder Include="Form Extensions\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Label Files\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Table Extensions\" />
+    <Folder Include="Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\FEDeleteDiscountAction">
+      <SubType>Content</SubType>
+      <Name>FEDeleteDiscountAction</Name>
+      <Link>Classes\FEDeleteDiscountAction</Link>
+    </Content>
+    <Content Include="AxClass\FEDiscountEngine">
+      <SubType>Content</SubType>
+      <Name>FEDiscountEngine</Name>
+      <Link>Classes\FEDiscountEngine</Link>
+    </Content>
+    <Content Include="AxClass\FEDiscountSetup">
+      <SubType>Content</SubType>
+      <Name>FEDiscountSetup</Name>
+      <Link>Classes\FEDiscountSetup</Link>
+    </Content>
+    <Content Include="AxClass\FEDiscountTableEventHandler">
+      <SubType>Content</SubType>
+      <Name>FEDiscountTableEventHandler</Name>
+      <Link>Classes\FEDiscountTableEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FEDiscount_Extension">
+      <SubType>Content</SubType>
+      <Name>FEDiscount_Extension</Name>
+      <Link>Classes\FEDiscount_Extension</Link>
+    </Content>
+    <Content Include="AxClass\FERentalDiscountRelationTableEventHandler">
+      <SubType>Content</SubType>
+      <Name>FERentalDiscountRelationTableEventHandler</Name>
+      <Link>Classes\FERentalDiscountRelationTableEventHandler</Link>
+    </Content>
+    <Content Include="AxClass\FMRentalCharge_Extension">
+      <SubType>Content</SubType>
+      <Name>FMRentalCharge_Extension</Name>
+      <Link>Classes\FMRentalCharge_Extension</Link>
+    </Content>
+    <Content Include="AxEnum\FEDiscountType">
+      <SubType>Content</SubType>
+      <Name>FEDiscountType</Name>
+      <Link>Base Enums\FEDiscountType</Link>
+    </Content>
+    <Content Include="AxFormExtension\FMRental.Extension">
+      <SubType>Content</SubType>
+      <Name>FMRental.Extension</Name>
+      <Link>Form Extensions\FMRental.Extension</Link>
+    </Content>
+    <Content Include="AxFormExtension\FMSetup.Extension">
+      <SubType>Content</SubType>
+      <Name>FMSetup.Extension</Name>
+      <Link>Form Extensions\FMSetup.Extension</Link>
+    </Content>
+    <Content Include="AxForm\FEPickDiscount">
+      <SubType>Content</SubType>
+      <Name>FEPickDiscount</Name>
+      <Link>Forms\FEPickDiscount</Link>
+    </Content>
+    <Content Include="AxLabelFile\FleetExtension_en-US">
+      <SubType>Content</SubType>
+      <Name>FleetExtension_en-US</Name>
+      <Link>Label Files\FleetExtension_en-US</Link>
+    </Content>
+    <Content Include="AxMenuItemAction\FEDeleteDiscount">
+      <SubType>Content</SubType>
+      <Name>FEDeleteDiscount</Name>
+      <Link>Action Menu Items\FEDeleteDiscount</Link>
+    </Content>
+    <Content Include="AxMenuItemDisplay\FEPickDiscount">
+      <SubType>Content</SubType>
+      <Name>FEPickDiscount</Name>
+      <Link>Display Menu Items\FEPickDiscount</Link>
+    </Content>
+    <Content Include="AxResource\Currency">
+      <SubType>Content</SubType>
+      <Name>Currency</Name>
+      <Link>Resources\Currency</Link>
+    </Content>
+    <Content Include="AxResource\Percent">
+      <SubType>Content</SubType>
+      <Name>Percent</Name>
+      <Link>Resources\Percent</Link>
+    </Content>
+    <Content Include="AxTableExtension\FMRental.Extension">
+      <SubType>Content</SubType>
+      <Name>FMRental.Extension</Name>
+      <Link>Table Extensions\FMRental.Extension</Link>
+    </Content>
+    <Content Include="AxTableExtension\FMRentalCharge.Extension">
+      <SubType>Content</SubType>
+      <Name>FMRentalCharge.Extension</Name>
+      <Link>Table Extensions\FMRentalCharge.Extension</Link>
+    </Content>
+    <Content Include="AxTable\FEDiscount">
+      <SubType>Content</SubType>
+      <Name>FEDiscount</Name>
+      <Link>Tables\FEDiscount</Link>
+    </Content>
+    <Content Include="AxTable\FERentalDiscountRelationTable">
+      <SubType>Content</SubType>
+      <Name>FERentalDiscountRelationTable</Name>
+      <Link>Tables\FERentalDiscountRelationTable</Link>
+    </Content>
+    <Content Include="Currency.png">
+      <SubType>Content</SubType>
+      <Name>Currency.png</Name>
+      <DependentUpon>AxResource\Currency</DependentUpon>
+    </Content>
+    <Content Include="FleetExtension.en-US.label.txt">
+      <SubType>Content</SubType>
+      <Name>FleetExtension.en-US.label.txt</Name>
+      <DependentUpon>AxLabelFile\FleetExtension_en-US</DependentUpon>
+    </Content>
+    <Content Include="Percent.png">
+      <SubType>Content</SubType>
+      <Name>Percent.png</Name>
+      <DependentUpon>AxResource\Percent</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Dynamics.Application.Instrumentation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.Dynamics.Application.Instrumentation</Name>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Dynamics\AX\Microsoft.Dynamics.Framework.Tools.BuildTasks.targets" />
+</Project>

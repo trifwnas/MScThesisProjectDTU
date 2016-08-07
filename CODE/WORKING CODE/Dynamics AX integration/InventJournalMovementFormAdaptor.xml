@@ -1,0 +1,2244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>InventJournalMovementFormAdaptor</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+class InventJournalMovementFormAdaptor extends FormAdaptor
+{
+}
+
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>openInventJournalTableMovement</Name>
+				<Source><![CDATA[
+    public static InventJournalMovementFormAdaptor openInventJournalTableMovement(InventJournalTable _inventJournalTable = null)
+    {
+        return new InventJournalMovementFormAdaptor(new FormAdaptorFactoryOpen('InventJournalMovement', menuItemDisplayStr(InventJournalTableMovement), _inventJournalTable));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>openInventJournalTransMovement</Name>
+				<Source><![CDATA[
+    public static InventJournalMovementFormAdaptor openInventJournalTransMovement(InventJournalTable _inventJournalTable = null)
+    {
+        return new InventJournalMovementFormAdaptor(new FormAdaptorFactoryOpen('InventJournalMovement', menuItemDisplayStr(InventJournalTransMovement), _inventJournalTable));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>attach</Name>
+				<Source><![CDATA[
+    public static InventJournalMovementFormAdaptor attach()
+    {
+        return new InventJournalMovementFormAdaptor(new FormAdaptorFactoryAttach('InventJournalMovement'));
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>checkJournal</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor checkJournal()
+    {
+        return this.getButton("checkJournal");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>postJournal</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor postJournal()
+    {
+        return this.getButton("postJournal");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalDeleteTrans</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventJournalDeleteTrans()
+    {
+        return this.adaptorActivateMenuButton("Functions", False).getButton("InventJournalDeleteTrans");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalCopy</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventJournalCopy()
+    {
+        return this.adaptorActivateMenuButton("Functions", False).getButton("InventJournalCopy");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ShowInfoLogTable</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor ShowInfoLogTable()
+    {
+        return this.adaptorActivateMenuButton("Functions", False).getButton("ShowInfoLogTable");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Functions</Name>
+				<Source><![CDATA[
+    public MenuButtonAdaptor Functions()
+    {
+        return this.getMenuButton("Functions");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Print_MenuFunctionButton</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor Print_MenuFunctionButton()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("Print_MenuFunctionButton");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventCountingList</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventCountingList()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventCountingList");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventCountingList_LV</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventCountingList_LV()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventCountingList_LV");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTransReceipt_PL</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventJournalTransReceipt_PL()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventJournalTransReceipt_PL");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTransIssue_PL</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventJournalTransIssue_PL()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventJournalTransIssue_PL");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTransTransfer_W</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventJournalTransTransfer_W()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventJournalTransTransfer_W");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventTransferLetter_LV</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventTransferLetter_LV()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventTransferLetter_LV");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventReport_Statement_W</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventReport_Statement_W()
+    {
+        return this.adaptorActivateMenuButton("PrintMenu", False).getButton("InventReport_Statement_W");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>PrintMenu</Name>
+				<Source><![CDATA[
+    public MenuButtonAdaptor PrintMenu()
+    {
+        return this.getMenuButton("PrintMenu");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Queries_RU</Name>
+				<Source><![CDATA[
+    public MenuButtonAdaptor Queries_RU()
+    {
+        return this.getMenuButton("Queries_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>inventExtJournalPrint</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor inventExtJournalPrint()
+    {
+        return this.getButton("inventExtJournalPrint");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ActionButtonGroup</Name>
+				<Source><![CDATA[
+    public GroupAdaptor ActionButtonGroup()
+    {
+        return this.getGroup("ActionButtonGroup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ActionPane</Name>
+				<Source><![CDATA[
+    public TabAdaptor ActionPane()
+    {
+        return this.getTab("ActionPane");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>HeaderFilter</Name>
+				<Source><![CDATA[
+    public QuickFilterAdaptor HeaderFilter()
+    {
+        return this.adaptorActivateGroup("NavigationList", False).getQuickFilter("HeaderFilter");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_JournalId_Overview</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_JournalId_Overview()
+    {
+        return this.adaptorActivateGroup("NavigationList", False).getStringEdit("InventJournalTable_JournalId_Overview");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_Description_Overview</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_Description_Overview()
+    {
+        return this.adaptorActivateGroup("NavigationList", False).getStringEdit("InventJournalTable_Description_Overview");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_JournalNameId_Overview</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_JournalNameId_Overview()
+    {
+        return this.adaptorActivateGroup("NavigationList", False).getStringEdit("InventJournalTable_JournalNameId_Overview");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>gridOverview</Name>
+				<Source><![CDATA[
+    public GridAdaptor gridOverview()
+    {
+        return this.adaptorActivateGroup("NavigationList", False).getGrid("gridOverview");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>NavigationList</Name>
+				<Source><![CDATA[
+    public GroupAdaptor NavigationList()
+    {
+        return this.getGroup("NavigationList");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Header</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor Header()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateGroup("Titlegroup", False).getStringEdit("Header");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Titlegroup</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Titlegroup()
+    {
+        return this.adaptorActivateTabPage("Details", False).getGroup("Titlegroup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>VoucherNumberSequence_NumberSequence</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor VoucherNumberSequence_NumberSequence()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Voucher1", False).getStringEdit("VoucherNumberSequence_NumberSequence");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>VoucherNumberSequence</Name>
+				<Source><![CDATA[
+    public ReferenceGroupAdaptor VoucherNumberSequence()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Voucher1", False).getReferenceGroup("VoucherNumberSequence");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher_VoucherDraw</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor Voucher_VoucherDraw()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Voucher1", False).getSelectableControl("Voucher_VoucherDraw");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher_VoucherChange</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor Voucher_VoucherChange()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Voucher1", False).getSelectableControl("Voucher_VoucherChange");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher1</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Voucher1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).getGroup("Voucher1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DetailSummary</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor DetailSummary()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Posting", False).getSelectableControl("DetailSummary");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DeletePostedLines</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor DeletePostedLines()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Posting", False).getCheckBox("DeletePostedLines");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Posting_OffsetLedgerDimension</Name>
+				<Source><![CDATA[
+    public SegmentedEntryAdaptor Posting_OffsetLedgerDimension()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Posting", False).getSegmentedEntry("Posting_OffsetLedgerDimension");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Posting_Storno_RU</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor Posting_Storno_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).adaptorActivateGroup("Posting", False).getCheckBox("Posting_Storno_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Posting</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Posting()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("HeaderDetails", False).getGroup("Posting");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>HeaderDetails</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor HeaderDetails()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).getTabPage("HeaderDetails");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>NewLine</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor NewLine()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getButton("NewLine");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RemoveLine</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor RemoveLine()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getButton("RemoveLine");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>NewDeleteGroup</Name>
+				<Source><![CDATA[
+    public GroupAdaptor NewDeleteGroup()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getGroup("NewDeleteGroup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventTrans</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventTrans()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventTrans");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventOnHand</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventOnHand()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventOnHand");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventLot</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventLot()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventLot");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimTracking</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventDimTracking()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventDimTracking");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventReserve</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventReserve()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventReserve");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventMarking</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventMarking()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventMarking");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventTransRegister</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventTransRegister()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventTransRegister");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventTransPick</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventTransPick()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventTransPick");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmFixed</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InventDimParmFixed()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("InventoryButton", False).getButton("InventDimParmFixed");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryButton</Name>
+				<Source><![CDATA[
+    public MenuButtonAdaptor InventoryButton()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getMenuButton("InventoryButton");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>PdsResetDispositionStatus</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor PdsResetDispositionStatus()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("LineFunctions", False).getButton("PdsResetDispositionStatus");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ShowInfoLog</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor ShowInfoLog()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateMenuButton("LineFunctions", False).getButton("ShowInfoLog");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LineFunctions</Name>
+				<Source><![CDATA[
+    public MenuButtonAdaptor LineFunctions()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getMenuButton("LineFunctions");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>TransTaxInformation_IN</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor TransTaxInformation_IN()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getButton("TransTaxInformation_IN");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LineActions</Name>
+				<Source><![CDATA[
+    public GroupAdaptor LineActions()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getGroup("LineActions");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LineActionPane</Name>
+				<Source><![CDATA[
+    public TabAdaptor LineActionPane()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getTab("LineActionPane");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_TransDate</Name>
+				<Source><![CDATA[
+    public DateEditAdaptor InventJournalTrans_TransDate()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getDateEdit("InventJournalTrans_TransDate");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_ItemId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTrans_ItemId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getStringEdit("InventJournalTrans_ItemId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_Voucher</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTrans_Voucher()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getStringEdit("InventJournalTrans_Voucher");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_configId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_configId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_configId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventSizeId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventSizeId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventSizeId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventColorId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventColorId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventColorId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventStyleId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventStyleId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventStyleId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventSiteId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventSiteId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventSiteId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventLocationId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventLocationId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventLocationId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_inventBatchId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_inventBatchId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_inventBatchId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_wMSLocationId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_wMSLocationId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_wMSLocationId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_wMSPalletId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_wMSPalletId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_wMSPalletId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_inventSerialId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_inventSerialId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_inventSerialId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventStatusId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventStatusId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventStatusId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_LicensePlateId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_LicensePlateId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_LicensePlateId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventOwnerId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventOwnerId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventOwnerId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventProfileId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventProfileId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventProfileId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid_InventGtdId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensionsGrid_InventGtdId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).adaptorActivateGroup("InventoryDimensionsGrid", False).getStringEdit("InventoryDimensionsGrid_InventGtdId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsGrid</Name>
+				<Source><![CDATA[
+    public GroupAdaptor InventoryDimensionsGrid()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getGroup("InventoryDimensionsGrid");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_PdsCWQty</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor InventJournalTrans_PdsCWQty()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getRealEdit("InventJournalTrans_PdsCWQty");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_PdsCWUnitId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTrans_PdsCWUnitId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getStringEdit("InventJournalTrans_PdsCWUnitId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_Qty</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor InventJournalTrans_Qty()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getRealEdit("InventJournalTrans_Qty");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_CostPrice</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor InventJournalTrans_CostPrice()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getRealEdit("InventJournalTrans_CostPrice");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_CostAmount</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor InventJournalTrans_CostAmount()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getRealEdit("InventJournalTrans_CostAmount");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTrans_OffsetAccount</Name>
+				<Source><![CDATA[
+    public SegmentedEntryAdaptor InventJournalTrans_OffsetAccount()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getSegmentedEntry("InventJournalTrans_OffsetAccount");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>PdsDispositionCode</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor PdsDispositionCode()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getStringEdit("PdsDispositionCode");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>PdsDispositionStatus</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor PdsDispositionStatus()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getSelectableControl("PdsDispositionStatus");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>lineLogImage</Name>
+				<Source><![CDATA[
+    public ImageAdaptor lineLogImage()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getImage("lineLogImage");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Grid</Name>
+				<Source><![CDATA[
+    public GridAdaptor Grid()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LInesView", False).getGrid("Grid");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LInesView</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor LInesView()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).getTabPage("LInesView");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor JournalId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Identification", False).getStringEdit("JournalId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LineNum</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor LineNum()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Identification", False).getRealEdit("LineNum");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>TransDate</Name>
+				<Source><![CDATA[
+    public DateEditAdaptor TransDate()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Identification", False).getDateEdit("TransDate");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor Voucher()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Identification", False).getStringEdit("Voucher");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Identification</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Identification()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("Identification");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalLine_PdsCWQty</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor JournalLine_PdsCWQty()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getRealEdit("JournalLine_PdsCWQty");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Qty</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor Qty()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getRealEdit("Qty");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalLine_M_pdsCWUnitId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor JournalLine_M_pdsCWUnitId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getStringEdit("JournalLine_M_pdsCWUnitId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CostPrice</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor CostPrice()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getRealEdit("CostPrice");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>PriceUnit</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor PriceUnit()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getRealEdit("PriceUnit");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CostMarkup</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor CostMarkup()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getRealEdit("CostMarkup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>CostAmount</Name>
+				<Source><![CDATA[
+    public RealEditAdaptor CostAmount()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("JournalLine", False).getRealEdit("CostAmount");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalLine</Name>
+				<Source><![CDATA[
+    public GroupAdaptor JournalLine()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("JournalLine");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Inventory_InventTransId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor Inventory_InventTransId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Inventory", False).getStringEdit("Inventory_InventTransId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Inventory_InventDimId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor Inventory_InventDimId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Inventory", False).getStringEdit("Inventory_InventDimId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Inventory</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Inventory()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("Inventory");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventTransIdReturn</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventTransIdReturn()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("ReturnLot", False).getStringEdit("InventTransIdReturn");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ReturnLot</Name>
+				<Source><![CDATA[
+    public GroupAdaptor ReturnLot()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("ReturnLot");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Ledger_OffsetLedgerDimension</Name>
+				<Source><![CDATA[
+    public SegmentedEntryAdaptor Ledger_OffsetLedgerDimension()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("Ledger", False).getSegmentedEntry("Ledger_OffsetLedgerDimension");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Ledger</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Ledger()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("Ledger");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OriginalLot_RU_Storno_RU</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor OriginalLot_RU_Storno_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("OriginalLot_RU", False).getCheckBox("OriginalLot_RU_Storno_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OriginalLot_RU_M_originalLot_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor OriginalLot_RU_M_originalLot_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("OriginalLot_RU", False).getStringEdit("OriginalLot_RU_M_originalLot_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OriginalLot_RU_M_derivedLot_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor OriginalLot_RU_M_derivedLot_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("OriginalLot_RU", False).getStringEdit("OriginalLot_RU_M_derivedLot_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OriginalLot_RU</Name>
+				<Source><![CDATA[
+    public GroupAdaptor OriginalLot_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("OriginalLot_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ScrapReasonRU_ScrapTypeId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor ScrapReasonRU_ScrapTypeId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).adaptorActivateGroup("ScrapReasonRU", False).getStringEdit("ScrapReasonRU_ScrapTypeId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ScrapReasonRU</Name>
+				<Source><![CDATA[
+    public GroupAdaptor ScrapReasonRU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("General", False).getGroup("ScrapReasonRU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>General</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor General()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).getTabPage("General");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DimensionEntryControl</Name>
+				<Source><![CDATA[
+    public DimensionEntryAdaptor DimensionEntryControl()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("FinancialDimensionsTab", False).getDimensionEntry("DimensionEntryControl");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FinancialDimensionsTab</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor FinancialDimensionsTab()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).getTabPage("FinancialDimensionsTab");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_configId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_configId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_configId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventSizeId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventSizeId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventSizeId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventColorId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventColorId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventColorId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventStyleId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventStyleId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventStyleId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventSiteId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventSiteId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventSiteId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventLocationId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventLocationId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventLocationId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_inventBatchId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_inventBatchId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_inventBatchId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_wMSLocationId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_wMSLocationId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_wMSLocationId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_wMSPalletId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_wMSPalletId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_wMSPalletId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_inventSerialId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_inventSerialId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_inventSerialId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventStatusId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventStatusId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventStatusId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_LicensePlateId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_LicensePlateId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_LicensePlateId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventOwnerId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventOwnerId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventOwnerId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventProfileId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventProfileId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventProfileId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions_InventGtdId_RU</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventoryDimensions_InventGtdId_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).adaptorActivateGroup("InventoryDimensions", False).getStringEdit("InventoryDimensions_InventGtdId_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensions</Name>
+				<Source><![CDATA[
+    public GroupAdaptor InventoryDimensions()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).adaptorActivateTabPage("InventoryDimensionsTab", False).getGroup("InventoryDimensions");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventoryDimensionsTab</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor InventoryDimensionsTab()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).getTabPage("InventoryDimensionsTab");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Tab</Name>
+				<Source><![CDATA[
+    public TabAdaptor Tab()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).adaptorActivateTabPage("LineDetails", False).getTab("Tab");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LineDetails</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor LineDetails()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).getTabPage("LineDetails");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>LineView</Name>
+				<Source><![CDATA[
+    public TabAdaptor LineView()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("Lines", False).getTab("LineView");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Lines</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor Lines()
+    {
+        return this.adaptorActivateTabPage("Details", False).getTabPage("Lines");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalId1</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor JournalId1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Identification1", False).getStringEdit("JournalId1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalType</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor JournalType()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Identification1", False).getSelectableControl("JournalType");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>JournalNameId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor JournalNameId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Identification1", False).getStringEdit("JournalNameId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Description</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor Description()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Identification1", False).getStringEdit("Description");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Identification1</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Identification1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).getGroup("Identification1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>VoucherNumberSequence_NumberSequence1</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor VoucherNumberSequence_NumberSequence1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Voucher2", False).getStringEdit("VoucherNumberSequence_NumberSequence1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>VoucherNumberSequence1</Name>
+				<Source><![CDATA[
+    public ReferenceGroupAdaptor VoucherNumberSequence1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Voucher2", False).getReferenceGroup("VoucherNumberSequence1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher_VoucherDraw1</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor Voucher_VoucherDraw1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Voucher2", False).getSelectableControl("Voucher_VoucherDraw1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher_VoucherChange1</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor Voucher_VoucherChange1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Voucher2", False).getSelectableControl("Voucher_VoucherChange1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Voucher2</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Voucher2()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).getGroup("Voucher2");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DetailSummary1</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor DetailSummary1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Posting1", False).getSelectableControl("DetailSummary1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DeletePostedLines1</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor DeletePostedLines1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Posting1", False).getCheckBox("DeletePostedLines1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Posting_OffsetLedgerDimension1</Name>
+				<Source><![CDATA[
+    public SegmentedEntryAdaptor Posting_OffsetLedgerDimension1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Posting1", False).getSegmentedEntry("Posting_OffsetLedgerDimension1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Posting_Storno_RU1</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor Posting_Storno_RU1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).adaptorActivateGroup("Posting1", False).getCheckBox("Posting_Storno_RU1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Posting1</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Posting1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("General2", False).getGroup("Posting1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>General2</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor General2()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).getTabPage("General2");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Inventory_Reservation</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor Inventory_Reservation()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("Inventory1", False).getSelectableControl("Inventory_Reservation");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Inventory1</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Inventory1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).getGroup("Inventory1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Employee_Worker_PersonnelNumber</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor Employee_Worker_PersonnelNumber()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("Employee", False).getStringEdit("Employee_Worker_PersonnelNumber");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Employee_Worker</Name>
+				<Source><![CDATA[
+    public ReferenceGroupAdaptor Employee_Worker()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("Employee", False).getReferenceGroup("Employee_Worker");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Employee</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Employee()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).getGroup("Employee");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DocType_PL_InventDocType_PL</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor DocType_PL_InventDocType_PL()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("DocTypePL", False).getSelectableControl("DocType_PL_InventDocType_PL");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DocTypePL</Name>
+				<Source><![CDATA[
+    public GroupAdaptor DocTypePL()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).getGroup("DocTypePL");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_ConfigIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_ConfigIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_ConfigIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventSizeIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventSizeIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventSizeIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventColorIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventColorIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventColorIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventStyleIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventStyleIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventStyleIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventSiteIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventSiteIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventSiteIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventLocationIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventLocationIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventLocationIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventStatusFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventStatusFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventStatusFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_WMSLocationIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_WMSLocationIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_WMSLocationIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_LicensePlateFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_LicensePlateFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_LicensePlateFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_WMSPalletIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_WMSPalletIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_WMSPalletIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventBatchIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventBatchIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventBatchIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventSerialIdFlag</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventSerialIdFlag()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventSerialIdFlag");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventGTDIdFlag_RU</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventGTDIdFlag_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventGTDIdFlag_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventOwnerIdFlag_RU</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventOwnerIdFlag_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventOwnerIdFlag_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView_InventProfileIdFlag_RU</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventDimParmView_InventProfileIdFlag_RU()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).adaptorActivateGroup("InventDimParmView", False).getCheckBox("InventDimParmView_InventProfileIdFlag_RU");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventDimParmView</Name>
+				<Source><![CDATA[
+    public GroupAdaptor InventDimParmView()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Setup", False).getGroup("InventDimParmView");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Setup</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor Setup()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).getTabPage("Setup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>MarkInUseBlock</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor MarkInUseBlock()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).adaptorActivateGroup("Column1", False).getCheckBox("MarkInUseBlock");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>MarkUserBlock</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor MarkUserBlock()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).adaptorActivateGroup("Column1", False).getCheckBox("MarkUserBlock");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Column1</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Column1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).getGroup("Column1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BlockInUseUserId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor BlockInUseUserId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).adaptorActivateGroup("Column2", False).getStringEdit("BlockInUseUserId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_BlockUserId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_BlockUserId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).adaptorActivateGroup("Column2", False).getStringEdit("InventJournalTable_BlockUserId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Column2</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Column2()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).getGroup("Column2");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>SystemBlocked</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor SystemBlocked()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).adaptorActivateGroup("Column3", False).getCheckBox("SystemBlocked");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_BlockUserGroupId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_BlockUserGroupId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).adaptorActivateGroup("Column3", False).getStringEdit("InventJournalTable_BlockUserGroupId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Column3</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Column3()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("Block", False).getGroup("Column3");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Block</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor Block()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).getTabPage("Block");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InitTotals</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor InitTotals()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).getButton("InitTotals");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>TotalsButtonGroup</Name>
+				<Source><![CDATA[
+    public GroupAdaptor TotalsButtonGroup()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).getGroup("TotalsButtonGroup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>HistoryTabToolbar</Name>
+				<Source><![CDATA[
+    public TabAdaptor HistoryTabToolbar()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).getTab("HistoryTabToolbar");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>History_Posted</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor History_Posted()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).adaptorActivateGroup("History", False).getCheckBox("History_Posted");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>History_PostedDateTime</Name>
+				<Source><![CDATA[
+    public DateTimeEditAdaptor History_PostedDateTime()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).adaptorActivateGroup("History", False).getDateTimeEdit("History_PostedDateTime");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>History_PostedUserId</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor History_PostedUserId()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).adaptorActivateGroup("History", False).getStringEdit("History_PostedUserId");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>History_JournalIdOrignal</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor History_JournalIdOrignal()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).adaptorActivateGroup("History", False).getStringEdit("History_JournalIdOrignal");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>History</Name>
+				<Source><![CDATA[
+    public GroupAdaptor History()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).getGroup("History");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Totals_NumOfLines</Name>
+				<Source><![CDATA[
+    public IntEditAdaptor Totals_NumOfLines()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).adaptorActivateGroup("Totals", False).getIntEdit("Totals_NumOfLines");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Totals</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Totals()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).adaptorActivateGroup("Contents", False).getGroup("Totals");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Contents</Name>
+				<Source><![CDATA[
+    public GroupAdaptor Contents()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("HistoryTab", False).getGroup("Contents");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>HistoryTab</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor HistoryTab()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).getTabPage("HistoryTab");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RetailStoreInventory_InventSiteId1</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor RetailStoreInventory_InventSiteId1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("RetailStoreInventory", False).adaptorActivateGroup("RetailStoreInventoryGroup", False).getStringEdit("RetailStoreInventory_InventSiteId1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RetailStoreInventory_InventLocationId1</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor RetailStoreInventory_InventLocationId1()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("RetailStoreInventory", False).adaptorActivateGroup("RetailStoreInventoryGroup", False).getStringEdit("RetailStoreInventory_InventLocationId1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RetailStoreInventoryGroup</Name>
+				<Source><![CDATA[
+    public GroupAdaptor RetailStoreInventoryGroup()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).adaptorActivateTabPage("RetailStoreInventory", False).getGroup("RetailStoreInventoryGroup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>RetailStoreInventory</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor RetailStoreInventory()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).getTabPage("RetailStoreInventory");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>HeaderPanelTab</Name>
+				<Source><![CDATA[
+    public TabAdaptor HeaderPanelTab()
+    {
+        return this.adaptorActivateTabPage("Details", False).adaptorActivateTabPage("HeaderPanel", False).getTab("HeaderPanelTab");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>HeaderPanel</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor HeaderPanel()
+    {
+        return this.adaptorActivateTabPage("Details", False).getTabPage("HeaderPanel");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DetailsTab</Name>
+				<Source><![CDATA[
+    public TabAdaptor DetailsTab()
+    {
+        return this.adaptorActivateTabPage("Details", False).getTab("DetailsTab");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>Details</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor Details()
+    {
+        return this.getTabPage("Details");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>OverviewFilter</Name>
+				<Source><![CDATA[
+    public QuickFilterAdaptor OverviewFilter()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).adaptorActivateGroup("FilterGroup", False).getQuickFilter("OverviewFilter");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>FilterGroup</Name>
+				<Source><![CDATA[
+    public GroupAdaptor FilterGroup()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getGroup("FilterGroup");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ctrlGridJournalId1</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor ctrlGridJournalId1()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getStringEdit("ctrlGridJournalId1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_JournalNameId1</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_JournalNameId1()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getStringEdit("InventJournalTable_JournalNameId1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>ctrlGridJournalType1</Name>
+				<Source><![CDATA[
+    public SelectableControlAdaptor ctrlGridJournalType1()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getSelectableControl("ctrlGridJournalType1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_Description</Name>
+				<Source><![CDATA[
+    public StringEditAdaptor InventJournalTable_Description()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getStringEdit("InventJournalTable_Description");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_NumOfLines</Name>
+				<Source><![CDATA[
+    public IntEditAdaptor InventJournalTable_NumOfLines()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getIntEdit("InventJournalTable_NumOfLines");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>InventJournalTable_PostedCopy1</Name>
+				<Source><![CDATA[
+    public CheckBoxAdaptor InventJournalTable_PostedCopy1()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getCheckBox("InventJournalTable_PostedCopy1");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>BlockImage</Name>
+				<Source><![CDATA[
+    public ImageAdaptor BlockImage()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getImage("BlockImage");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>gridOverviewDetails</Name>
+				<Source><![CDATA[
+    public GridAdaptor gridOverviewDetails()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getGrid("gridOverviewDetails");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>DetailsViewCommand</Name>
+				<Source><![CDATA[
+    public ButtonAdaptor DetailsViewCommand()
+    {
+        return this.adaptorActivateTabPage("GridPanel", False).getButton("DetailsViewCommand");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>GridPanel</Name>
+				<Source><![CDATA[
+    public TabPageAdaptor GridPanel()
+    {
+        return this.getTabPage("GridPanel");
+    }
+
+]]></Source>
+			</Method>
+			<Method>
+				<Name>PanelTab</Name>
+				<Source><![CDATA[
+    public TabAdaptor PanelTab()
+    {
+        return this.getTab("PanelTab");
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>

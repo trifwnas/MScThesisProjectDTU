@@ -1,0 +1,67 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "BarcodeScanner",
+        "description": "A BarcodeScanner API"
+    },
+    "host": "barcodewebapppowerax.azurewebsites.net",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/w",
+    "paths": {
+        "/decode": {
+            "post": {
+                "tags": [
+                    "file"
+                ],
+                "operationId": "post",
+                "consumes": [
+                  "multipart/form-data"
+                  ],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "multipart/form-data",
+                    "text/html"
+                ],
+                "parameters":[
+                        {
+                            "name":"f",
+                            "in":"formData",
+                            "description":"file with barcode to upload",
+                            "required":true,
+                            "type":"file"
+                        }
+                              ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref":""
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+    },
+    "definitions": {
+        "barcode": {
+            "type": "object",
+            "properties": {
+                "File": {
+                    "type": "file"
+                },
+                "BarcodeNumber": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

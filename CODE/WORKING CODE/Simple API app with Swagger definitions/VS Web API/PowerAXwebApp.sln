@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerAXwebApp", "PowerAXwebApp\PowerAXwebApp.csproj", "{BE324834-E7C4-4A7C-A1E7-887B9B8F18EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{8F15E02E-B8E6-422D-A00B-937EA1474B58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{26D12DC8-023B-481E-9C0C-F3EEEBED9273}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{29964366-156A-4D41-B821-AD3214AA9838}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\PowerAXwebApp.json = PublishScripts\Templates\PowerAXwebApp.json
+		PublishScripts\Templates\PowerAXwebApp.param.dev.json = PublishScripts\Templates\PowerAXwebApp.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE324834-E7C4-4A7C-A1E7-887B9B8F18EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE324834-E7C4-4A7C-A1E7-887B9B8F18EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE324834-E7C4-4A7C-A1E7-887B9B8F18EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE324834-E7C4-4A7C-A1E7-887B9B8F18EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{26D12DC8-023B-481E-9C0C-F3EEEBED9273} = {8F15E02E-B8E6-422D-A00B-937EA1474B58}
+		{29964366-156A-4D41-B821-AD3214AA9838} = {8F15E02E-B8E6-422D-A00B-937EA1474B58}
+	EndGlobalSection
+EndGlobal

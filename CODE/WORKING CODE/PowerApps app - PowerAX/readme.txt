@@ -1,0 +1,1 @@
+This is a PowerApps app which helps warehouse workers count items by scanning their barcode.

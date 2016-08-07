@@ -1,0 +1,108 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "BarcodeScanner",
+        "description": "A BarcodeScanner API"
+    },
+    "host": "barcodewebapppowerax.azurewebsites.net",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/w",
+    "paths": {
+        "/decode": {
+          "get": {
+                "tags": [
+                    "url"
+                ],
+                "operationId": "get",
+                "consumes": [
+                  "text/html;charset=UTF-8"
+                  ],
+                "produces": [
+                    "application/json",
+                  "multipart/form-data",
+                  "multipart/related",
+                  "application/x-www-form-urlencoded",
+                  "text/plain",
+                  "text/html",
+                  "application/xml",
+                  "text/json",
+                  "application/x-gzip"
+                ],
+                "parameters":[
+    					{
+    						"name":"u",
+    						"in":"formData",
+    						"description":"url with barcode",
+    						"required":true,
+    						"type":"string"
+    				},
+                    ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref": ""
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "file"
+                ],
+                "operationId": "post",
+                "consumes": [
+                  "application/json"
+                  ],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "multipart/form-data",
+                    "text/html"
+                ],
+                "parameters":[
+                        {
+                            "name":"f",
+                            "in":"formData",
+                            "description":"file with barcode to upload",
+                            "required":true,
+                            "type":"file"
+						}
+					          ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref":""
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+    },
+    "definitions": {
+        "barcode": {
+            "type": "object",
+            "properties": {
+                "File": {
+                    "type": "file"
+                },
+                "BarcodeNumber": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

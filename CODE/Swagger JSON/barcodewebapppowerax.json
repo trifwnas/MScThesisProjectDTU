@@ -1,0 +1,131 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "BarcodeScannerPowerAX",
+        "description": "A BarcodeScanner API for PowerAX"
+    },
+    "host": "barcodewebapppowerax.azurewebsites.net",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "basePath": "/api",
+    "paths": {
+        "/barcodes": {
+            "get": {
+                "tags": [
+                    "Barcode"
+                ],
+                "operationId": "barcodes_get",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/barcode"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/barcodes/{id}": {
+            "get": {
+                "tags": [
+                    "Barcode"
+                ],
+                "operationId": "barcodes_getById",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/barcode"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/barcodes/{id}/uploadBarcode":{
+          "post":{
+    				"tags":[
+    				  "barcode"
+    				  ],
+    				  "summary":"uploads a barcode",
+    				  "description":"","operationId":"uploadFile",
+    				  "consumes":["multipart/form-data"],
+    				  "produces":["application/json"],
+    				  "parameters":[
+    					{
+    						"name":"id",
+    						"in":"path",
+    						"description":"ID of barcode to update",
+    						"required":true,
+    						"type":"integer",
+    						"format":"int64"
+    					},
+    					{
+    						"name":"additionalMetadata",
+    						"in":"formData",
+    						"description":"Additional data to pass to server",
+    						"required":false,
+    						"type":"string"
+    					},
+    					{
+    						"name":"f",
+    						"in":"formData",
+    						"description":"file to upload",
+    						"required":true,
+    						"type":"file"
+    				},
+                    ],
+                    "responses":{
+                      "200":{"description":"successful operation",
+                        }
+                      },
+                    }
+              },
+    },
+    "definitions": {
+        "barcode": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

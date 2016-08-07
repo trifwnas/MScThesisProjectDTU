@@ -1,0 +1,3 @@
+- Use Azure to create a web app
+- Copy paste the .war file in the folder "webapp" using the Kudu Azure tool
+- Restart the web app

@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "BarcodeScannerPowerAX",
+        "description": "A BarcodeScanner API for PowerAX"
+    },
+    "host": "zxing.org",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "basePath": "/w/decode",
+    "paths": {
+        "/decode": {
+            "get": {
+                "tags": [
+                    "decode"
+                ],
+                "operationId": "barcodes_get",
+                "consumes": [
+                  "application/json",
+                  "multipart/form-data",
+                  "multipart/related",
+                  "application/x-www-form-urlencoded",
+                  "text/plain",
+                  "text/html"
+                  ],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "multipart/form-data",
+                    "text/html"
+                ],
+                "parameters":[
+    					{
+    						"name":"u",
+    						"in":"formData",
+    						"description":"url with barcode",
+    						"required":true,
+    						"type":"string"
+    				},
+                    ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref": "#/definitions/barcode"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+    },
+    "definitions": {
+        "barcode": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "BarcodeScannerPowerAX",
+        "description": "A BarcodeScanner API for PowerAX"
+    },
+    "host": "zxing.org",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/w",
+    "paths": {
+        "/decode": {
+            "post": {
+                "tags": [
+                    "decode"
+                ],
+                "operationId": "barcode_post",
+                "consumes": [
+                  "multipart/form-data"
+                  ],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "text/xml"
+                ],
+                "parameters":[
+    					{
+    						"name":"f",
+    						"in":"formData",
+    						"description":"file with barcode to upload",
+    						"required":true,
+    						"type":"file"
+    				},
+                    ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "items": {
+                                "$ref":"#/definitions/barcode"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+    },
+    "definitions": {
+        "barcode": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
