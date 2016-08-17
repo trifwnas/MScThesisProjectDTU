@@ -1,0 +1,92 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Contact List",
+        "description": "A Contact list API based on Swagger and built using Java"
+    },
+    "host": "localhost",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "basePath": "/api",
+    "paths": {
+        "/contacts": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "contacts_get",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Contact"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/contacts/{id}": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "contacts_getById",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Contact"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Contact": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

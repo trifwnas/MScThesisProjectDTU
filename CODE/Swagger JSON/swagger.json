@@ -1,0 +1,53 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "PowerAXwebApp"
+    },
+    "host": "localhost:59533",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/Barcode": {
+            "get": {
+                "tags": [
+                    "Barcode"
+                ],
+                "operationId": "GetBarcodes",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Barcode"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Barcode": {
+            "type": "object",
+            "properties": {
+                "ID": {
+                    "type": "string"
+                },
+                "Number": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

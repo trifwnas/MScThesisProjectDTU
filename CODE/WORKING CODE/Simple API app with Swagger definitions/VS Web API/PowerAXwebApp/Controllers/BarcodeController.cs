@@ -30,6 +30,7 @@ namespace PowerAXwebApp.Controllers
             new Barcode() { ID = "01", Number = "Barcode 001"},
             new Barcode() { ID = "02", Number = "Barcode 002"},
             new Barcode() { ID = "03", Number = "Barcode 003"},
+            new Barcode() { ID = "04", Number = "Barcode 004"},
         };
     }
 

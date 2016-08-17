@@ -1,0 +1,164 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "WebApplication1"
+    },
+    "host": "localhost:5029",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/Contact": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "Contact_Get",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "text/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "Contact_PostByValue",
+                "consumes": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "text/xml",
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [],
+                "parameters": [
+                    {
+                        "name": "value",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/api/Contact/{id}": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "Contact_GetById",
+                "consumes": [],
+                "produces": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "text/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "Contact_PutByIdAndValue",
+                "consumes": [
+                    "application/json",
+                    "text/json",
+                    "application/xml",
+                    "text/xml",
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "value",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Contact"
+                ],
+                "operationId": "Contact_DeleteById",
+                "consumes": [],
+                "produces": [],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {}
+}
